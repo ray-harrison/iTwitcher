@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		337D545416ADF31B004F53AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545316ADF31B004F53AF /* UIKit.framework */; };
+		337D545616ADF31B004F53AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545516ADF31B004F53AF /* Foundation.framework */; };
+		337D545816ADF31B004F53AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545716ADF31B004F53AF /* CoreGraphics.framework */; };
+		337D545E16ADF31B004F53AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 337D545C16ADF31B004F53AF /* InfoPlist.strings */; };
+		337D546016ADF31B004F53AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 337D545F16ADF31B004F53AF /* main.m */; };
+		337D546416ADF31B004F53AF /* iTwitcherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 337D546316ADF31B004F53AF /* iTwitcherAppDelegate.m */; };
+		337D546616ADF31B004F53AF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D546516ADF31B004F53AF /* Default.png */; };
+		337D546816ADF31B004F53AF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D546716ADF31B004F53AF /* Default@2x.png */; };
+		337D546A16ADF31B004F53AF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D546916ADF31B004F53AF /* Default-568h@2x.png */; };
+		337D546D16ADF31B004F53AF /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 337D546B16ADF31B004F53AF /* MainStoryboard_iPhone.storyboard */; };
+		337D547016ADF31B004F53AF /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 337D546E16ADF31B004F53AF /* MainStoryboard_iPad.storyboard */; };
+		337D547316ADF31B004F53AF /* iTwitcherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 337D547216ADF31B004F53AF /* iTwitcherViewController.m */; };
+		337D547B16ADF31C004F53AF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D547A16ADF31C004F53AF /* SenTestingKit.framework */; };
+		337D547C16ADF31C004F53AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545316ADF31B004F53AF /* UIKit.framework */; };
+		337D547D16ADF31C004F53AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545516ADF31B004F53AF /* Foundation.framework */; };
+		337D548516ADF31C004F53AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 337D548316ADF31C004F53AF /* InfoPlist.strings */; };
+		337D548816ADF31C004F53AF /* iTwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 337D548716ADF31C004F53AF /* iTwitcherTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		337D547E16ADF31C004F53AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 337D544816ADF31B004F53AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 337D544F16ADF31B004F53AF;
+			remoteInfo = iTwitcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		337D545016ADF31B004F53AF /* iTwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		337D545316ADF31B004F53AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		337D545516ADF31B004F53AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		337D545716ADF31B004F53AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		337D545B16ADF31B004F53AF /* iTwitcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTwitcher-Info.plist"; sourceTree = "<group>"; };
+		337D545D16ADF31B004F53AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		337D545F16ADF31B004F53AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		337D546116ADF31B004F53AF /* iTwitcher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTwitcher-Prefix.pch"; sourceTree = "<group>"; };
+		337D546216ADF31B004F53AF /* iTwitcherAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTwitcherAppDelegate.h; sourceTree = "<group>"; };
+		337D546316ADF31B004F53AF /* iTwitcherAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTwitcherAppDelegate.m; sourceTree = "<group>"; };
+		337D546516ADF31B004F53AF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		337D546716ADF31B004F53AF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		337D546916ADF31B004F53AF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		337D546C16ADF31B004F53AF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		337D546F16ADF31B004F53AF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		337D547116ADF31B004F53AF /* iTwitcherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTwitcherViewController.h; sourceTree = "<group>"; };
+		337D547216ADF31B004F53AF /* iTwitcherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTwitcherViewController.m; sourceTree = "<group>"; };
+		337D547916ADF31C004F53AF /* iTwitcherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTwitcherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		337D547A16ADF31C004F53AF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		337D548216ADF31C004F53AF /* iTwitcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTwitcherTests-Info.plist"; sourceTree = "<group>"; };
+		337D548416ADF31C004F53AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		337D548616ADF31C004F53AF /* iTwitcherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTwitcherTests.h; sourceTree = "<group>"; };
+		337D548716ADF31C004F53AF /* iTwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTwitcherTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		337D544D16ADF31B004F53AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				337D545416ADF31B004F53AF /* UIKit.framework in Frameworks */,
+				337D545616ADF31B004F53AF /* Foundation.framework in Frameworks */,
+				337D545816ADF31B004F53AF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		337D547516ADF31C004F53AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				337D547B16ADF31C004F53AF /* SenTestingKit.framework in Frameworks */,
+				337D547C16ADF31C004F53AF /* UIKit.framework in Frameworks */,
+				337D547D16ADF31C004F53AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		337D544716ADF31B004F53AF = {
+			isa = PBXGroup;
+			children = (
+				337D545916ADF31B004F53AF /* iTwitcher */,
+				337D548016ADF31C004F53AF /* iTwitcherTests */,
+				337D545216ADF31B004F53AF /* Frameworks */,
+				337D545116ADF31B004F53AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		337D545116ADF31B004F53AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				337D545016ADF31B004F53AF /* iTwitcher.app */,
+				337D547916ADF31C004F53AF /* iTwitcherTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		337D545216ADF31B004F53AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				337D545316ADF31B004F53AF /* UIKit.framework */,
+				337D545516ADF31B004F53AF /* Foundation.framework */,
+				337D545716ADF31B004F53AF /* CoreGraphics.framework */,
+				337D547A16ADF31C004F53AF /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		337D545916ADF31B004F53AF /* iTwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				337D546216ADF31B004F53AF /* iTwitcherAppDelegate.h */,
+				337D546316ADF31B004F53AF /* iTwitcherAppDelegate.m */,
+				337D546B16ADF31B004F53AF /* MainStoryboard_iPhone.storyboard */,
+				337D546E16ADF31B004F53AF /* MainStoryboard_iPad.storyboard */,
+				337D547116ADF31B004F53AF /* iTwitcherViewController.h */,
+				337D547216ADF31B004F53AF /* iTwitcherViewController.m */,
+				337D545A16ADF31B004F53AF /* Supporting Files */,
+			);
+			path = iTwitcher;
+			sourceTree = "<group>";
+		};
+		337D545A16ADF31B004F53AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				337D545B16ADF31B004F53AF /* iTwitcher-Info.plist */,
+				337D545C16ADF31B004F53AF /* InfoPlist.strings */,
+				337D545F16ADF31B004F53AF /* main.m */,
+				337D546116ADF31B004F53AF /* iTwitcher-Prefix.pch */,
+				337D546516ADF31B004F53AF /* Default.png */,
+				337D546716ADF31B004F53AF /* Default@2x.png */,
+				337D546916ADF31B004F53AF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		337D548016ADF31C004F53AF /* iTwitcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				337D548616ADF31C004F53AF /* iTwitcherTests.h */,
+				337D548716ADF31C004F53AF /* iTwitcherTests.m */,
+				337D548116ADF31C004F53AF /* Supporting Files */,
+			);
+			path = iTwitcherTests;
+			sourceTree = "<group>";
+		};
+		337D548116ADF31C004F53AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				337D548216ADF31C004F53AF /* iTwitcherTests-Info.plist */,
+				337D548316ADF31C004F53AF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		337D544F16ADF31B004F53AF /* iTwitcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 337D548B16ADF31C004F53AF /* Build configuration list for PBXNativeTarget "iTwitcher" */;
+			buildPhases = (
+				337D544C16ADF31B004F53AF /* Sources */,
+				337D544D16ADF31B004F53AF /* Frameworks */,
+				337D544E16ADF31B004F53AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iTwitcher;
+			productName = iTwitcher;
+			productReference = 337D545016ADF31B004F53AF /* iTwitcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		337D547816ADF31C004F53AF /* iTwitcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 337D548E16ADF31C004F53AF /* Build configuration list for PBXNativeTarget "iTwitcherTests" */;
+			buildPhases = (
+				337D547416ADF31C004F53AF /* Sources */,
+				337D547516ADF31C004F53AF /* Frameworks */,
+				337D547616ADF31C004F53AF /* Resources */,
+				337D547716ADF31C004F53AF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				337D547F16ADF31C004F53AF /* PBXTargetDependency */,
+			);
+			name = iTwitcherTests;
+			productName = iTwitcherTests;
+			productReference = 337D547916ADF31C004F53AF /* iTwitcherTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		337D544816ADF31B004F53AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = iTwitcher;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Raymond Harrison";
+			};
+			buildConfigurationList = 337D544B16ADF31B004F53AF /* Build configuration list for PBXProject "iTwitcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 337D544716ADF31B004F53AF;
+			productRefGroup = 337D545116ADF31B004F53AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				337D544F16ADF31B004F53AF /* iTwitcher */,
+				337D547816ADF31C004F53AF /* iTwitcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		337D544E16ADF31B004F53AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				337D545E16ADF31B004F53AF /* InfoPlist.strings in Resources */,
+				337D546616ADF31B004F53AF /* Default.png in Resources */,
+				337D546816ADF31B004F53AF /* Default@2x.png in Resources */,
+				337D546A16ADF31B004F53AF /* Default-568h@2x.png in Resources */,
+				337D546D16ADF31B004F53AF /* MainStoryboard_iPhone.storyboard in Resources */,
+				337D547016ADF31B004F53AF /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		337D547616ADF31C004F53AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				337D548516ADF31C004F53AF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		337D547716ADF31C004F53AF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		337D544C16ADF31B004F53AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				337D546016ADF31B004F53AF /* main.m in Sources */,
+				337D546416ADF31B004F53AF /* iTwitcherAppDelegate.m in Sources */,
+				337D547316ADF31B004F53AF /* iTwitcherViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		337D547416ADF31C004F53AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				337D548816ADF31C004F53AF /* iTwitcherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		337D547F16ADF31C004F53AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 337D544F16ADF31B004F53AF /* iTwitcher */;
+			targetProxy = 337D547E16ADF31C004F53AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		337D545C16ADF31B004F53AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				337D545D16ADF31B004F53AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		337D546B16ADF31B004F53AF /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				337D546C16ADF31B004F53AF /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		337D546E16ADF31B004F53AF /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				337D546F16ADF31B004F53AF /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		337D548316ADF31C004F53AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				337D548416ADF31C004F53AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		337D548916ADF31C004F53AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		337D548A16ADF31C004F53AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		337D548C16ADF31C004F53AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTwitcher/iTwitcher-Prefix.pch";
+				INFOPLIST_FILE = "iTwitcher/iTwitcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		337D548D16ADF31C004F53AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTwitcher/iTwitcher-Prefix.pch";
+				INFOPLIST_FILE = "iTwitcher/iTwitcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		337D548F16ADF31C004F53AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iTwitcher.app/iTwitcher";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTwitcher/iTwitcher-Prefix.pch";
+				INFOPLIST_FILE = "iTwitcherTests/iTwitcherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		337D549016ADF31C004F53AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iTwitcher.app/iTwitcher";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTwitcher/iTwitcher-Prefix.pch";
+				INFOPLIST_FILE = "iTwitcherTests/iTwitcherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		337D544B16ADF31B004F53AF /* Build configuration list for PBXProject "iTwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				337D548916ADF31C004F53AF /* Debug */,
+				337D548A16ADF31C004F53AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		337D548B16ADF31C004F53AF /* Build configuration list for PBXNativeTarget "iTwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				337D548C16ADF31C004F53AF /* Debug */,
+				337D548D16ADF31C004F53AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		337D548E16ADF31C004F53AF /* Build configuration list for PBXNativeTarget "iTwitcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				337D548F16ADF31C004F53AF /* Debug */,
+				337D549016ADF31C004F53AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 337D544816ADF31B004F53AF /* Project object */;
+}
