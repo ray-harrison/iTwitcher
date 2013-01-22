@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33330B4016AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33330B3E16AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld */; };
 		337D545416ADF31B004F53AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545316ADF31B004F53AF /* UIKit.framework */; };
 		337D545616ADF31B004F53AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545516ADF31B004F53AF /* Foundation.framework */; };
 		337D545816ADF31B004F53AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545716ADF31B004F53AF /* CoreGraphics.framework */; };
@@ -24,6 +25,26 @@
 		337D547D16ADF31C004F53AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545516ADF31B004F53AF /* Foundation.framework */; };
 		337D548516ADF31C004F53AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 337D548316ADF31C004F53AF /* InfoPlist.strings */; };
 		337D548816ADF31C004F53AF /* iTwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 337D548716ADF31C004F53AF /* iTwitcherTests.m */; };
+		337D549216ADF59C004F53AF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D549116ADF59C004F53AF /* MapKit.framework */; };
+		337D549416ADF5A8004F53AF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D549316ADF5A8004F53AF /* CoreLocation.framework */; };
+		337D549616ADF5F5004F53AF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D549516ADF5F5004F53AF /* AddressBook.framework */; };
+		337D549816ADF601004F53AF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D549716ADF601004F53AF /* CoreData.framework */; };
+		337D549C16ADF642004F53AF /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D549B16ADF642004F53AF /* iAd.framework */; };
+		337D549E16ADF66B004F53AF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D549D16ADF66B004F53AF /* QuartzCore.framework */; };
+		337D54A016ADF67D004F53AF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D549F16ADF67C004F53AF /* Social.framework */; };
+		337D54AB16AE0B0D004F53AF /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54A116AE0B0D004F53AF /* Icon-72.png */; };
+		337D54AC16AE0B0D004F53AF /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54A216AE0B0D004F53AF /* Icon-72@2x.png */; };
+		337D54AD16AE0B0D004F53AF /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54A316AE0B0D004F53AF /* Icon-Small-50.png */; };
+		337D54AE16AE0B0D004F53AF /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54A416AE0B0D004F53AF /* Icon-Small-50@2x.png */; };
+		337D54AF16AE0B0D004F53AF /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54A516AE0B0D004F53AF /* Icon-Small.png */; };
+		337D54B016AE0B0D004F53AF /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54A616AE0B0D004F53AF /* Icon-Small@2x.png */; };
+		337D54B116AE0B0D004F53AF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54A716AE0B0D004F53AF /* Icon.png */; };
+		337D54B216AE0B0D004F53AF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54A816AE0B0D004F53AF /* Icon@2x.png */; };
+		337D54B316AE0B0D004F53AF /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54A916AE0B0D004F53AF /* iTunesArtwork.png */; };
+		337D54B416AE0B0D004F53AF /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54AA16AE0B0D004F53AF /* iTunesArtwork@2x.png */; };
+		337D54B616AE0B45004F53AF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54B516AE0B45004F53AF /* Icon@2x.png */; };
+		337D54B816AE0B55004F53AF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54B716AE0B55004F53AF /* Icon.png */; };
+		337D54BA16AE0B69004F53AF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54B916AE0B69004F53AF /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33330B3F16AEC81B0045D3BC /* iTwitcherModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTwitcherModel.xcdatamodel; sourceTree = "<group>"; };
 		337D545016ADF31B004F53AF /* iTwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		337D545316ADF31B004F53AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		337D545516ADF31B004F53AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +82,27 @@
 		337D548416ADF31C004F53AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		337D548616ADF31C004F53AF /* iTwitcherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTwitcherTests.h; sourceTree = "<group>"; };
 		337D548716ADF31C004F53AF /* iTwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTwitcherTests.m; sourceTree = "<group>"; };
+		337D549116ADF59C004F53AF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		337D549316ADF5A8004F53AF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		337D549516ADF5F5004F53AF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		337D549716ADF601004F53AF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		337D549916ADF60D004F53AF /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		337D549B16ADF642004F53AF /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		337D549D16ADF66B004F53AF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		337D549F16ADF67C004F53AF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		337D54A116AE0B0D004F53AF /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		337D54A216AE0B0D004F53AF /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		337D54A316AE0B0D004F53AF /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		337D54A416AE0B0D004F53AF /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		337D54A516AE0B0D004F53AF /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		337D54A616AE0B0D004F53AF /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		337D54A716AE0B0D004F53AF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		337D54A816AE0B0D004F53AF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		337D54A916AE0B0D004F53AF /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		337D54AA16AE0B0D004F53AF /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		337D54B516AE0B45004F53AF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		337D54B716AE0B55004F53AF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		337D54B916AE0B69004F53AF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +110,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				337D54A016ADF67D004F53AF /* Social.framework in Frameworks */,
+				337D549E16ADF66B004F53AF /* QuartzCore.framework in Frameworks */,
+				337D549C16ADF642004F53AF /* iAd.framework in Frameworks */,
+				337D549816ADF601004F53AF /* CoreData.framework in Frameworks */,
+				337D549616ADF5F5004F53AF /* AddressBook.framework in Frameworks */,
+				337D549416ADF5A8004F53AF /* CoreLocation.framework in Frameworks */,
+				337D549216ADF59C004F53AF /* MapKit.framework in Frameworks */,
 				337D545416ADF31B004F53AF /* UIKit.framework in Frameworks */,
 				337D545616ADF31B004F53AF /* Foundation.framework in Frameworks */,
 				337D545816ADF31B004F53AF /* CoreGraphics.framework in Frameworks */,
@@ -86,9 +136,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33330B3D16AEC7F60045D3BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33330B3E16AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		337D544716ADF31B004F53AF = {
 			isa = PBXGroup;
 			children = (
+				337D54B916AE0B69004F53AF /* Default.png */,
+				337D54B716AE0B55004F53AF /* Icon.png */,
+				337D54B516AE0B45004F53AF /* Icon@2x.png */,
+				337D549F16ADF67C004F53AF /* Social.framework */,
+				337D549D16ADF66B004F53AF /* QuartzCore.framework */,
+				337D549B16ADF642004F53AF /* iAd.framework */,
+				337D549916ADF60D004F53AF /* QuickLook.framework */,
+				337D549716ADF601004F53AF /* CoreData.framework */,
+				337D549516ADF5F5004F53AF /* AddressBook.framework */,
+				337D549316ADF5A8004F53AF /* CoreLocation.framework */,
+				337D549116ADF59C004F53AF /* MapKit.framework */,
 				337D545916ADF31B004F53AF /* iTwitcher */,
 				337D548016ADF31C004F53AF /* iTwitcherTests */,
 				337D545216ADF31B004F53AF /* Frameworks */,
@@ -119,6 +188,7 @@
 		337D545916ADF31B004F53AF /* iTwitcher */ = {
 			isa = PBXGroup;
 			children = (
+				33330B3D16AEC7F60045D3BC /* Model */,
 				337D546216ADF31B004F53AF /* iTwitcherAppDelegate.h */,
 				337D546316ADF31B004F53AF /* iTwitcherAppDelegate.m */,
 				337D546B16ADF31B004F53AF /* MainStoryboard_iPhone.storyboard */,
@@ -133,6 +203,16 @@
 		337D545A16ADF31B004F53AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				337D54A116AE0B0D004F53AF /* Icon-72.png */,
+				337D54A216AE0B0D004F53AF /* Icon-72@2x.png */,
+				337D54A316AE0B0D004F53AF /* Icon-Small-50.png */,
+				337D54A416AE0B0D004F53AF /* Icon-Small-50@2x.png */,
+				337D54A516AE0B0D004F53AF /* Icon-Small.png */,
+				337D54A616AE0B0D004F53AF /* Icon-Small@2x.png */,
+				337D54A716AE0B0D004F53AF /* Icon.png */,
+				337D54A816AE0B0D004F53AF /* Icon@2x.png */,
+				337D54A916AE0B0D004F53AF /* iTunesArtwork.png */,
+				337D54AA16AE0B0D004F53AF /* iTunesArtwork@2x.png */,
 				337D545B16ADF31B004F53AF /* iTwitcher-Info.plist */,
 				337D545C16ADF31B004F53AF /* InfoPlist.strings */,
 				337D545F16ADF31B004F53AF /* main.m */,
@@ -241,6 +321,19 @@
 				337D546A16ADF31B004F53AF /* Default-568h@2x.png in Resources */,
 				337D546D16ADF31B004F53AF /* MainStoryboard_iPhone.storyboard in Resources */,
 				337D547016ADF31B004F53AF /* MainStoryboard_iPad.storyboard in Resources */,
+				337D54AB16AE0B0D004F53AF /* Icon-72.png in Resources */,
+				337D54AC16AE0B0D004F53AF /* Icon-72@2x.png in Resources */,
+				337D54AD16AE0B0D004F53AF /* Icon-Small-50.png in Resources */,
+				337D54AE16AE0B0D004F53AF /* Icon-Small-50@2x.png in Resources */,
+				337D54AF16AE0B0D004F53AF /* Icon-Small.png in Resources */,
+				337D54B016AE0B0D004F53AF /* Icon-Small@2x.png in Resources */,
+				337D54B116AE0B0D004F53AF /* Icon.png in Resources */,
+				337D54B216AE0B0D004F53AF /* Icon@2x.png in Resources */,
+				337D54B316AE0B0D004F53AF /* iTunesArtwork.png in Resources */,
+				337D54B416AE0B0D004F53AF /* iTunesArtwork@2x.png in Resources */,
+				337D54B616AE0B45004F53AF /* Icon@2x.png in Resources */,
+				337D54B816AE0B55004F53AF /* Icon.png in Resources */,
+				337D54BA16AE0B69004F53AF /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +371,7 @@
 				337D546016ADF31B004F53AF /* main.m in Sources */,
 				337D546416ADF31B004F53AF /* iTwitcherAppDelegate.m in Sources */,
 				337D547316ADF31B004F53AF /* iTwitcherViewController.m in Sources */,
+				33330B4016AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +562,7 @@
 				337D548D16ADF31C004F53AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		337D548E16ADF31C004F53AF /* Build configuration list for PBXNativeTarget "iTwitcherTests" */ = {
 			isa = XCConfigurationList;
@@ -476,8 +571,22 @@
 				337D549016ADF31C004F53AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		33330B3E16AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				33330B3F16AEC81B0045D3BC /* iTwitcherModel.xcdatamodel */,
+			);
+			currentVersion = 33330B3F16AEC81B0045D3BC /* iTwitcherModel.xcdatamodel */;
+			path = iTwitcherModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 337D544816ADF31B004F53AF /* Project object */;
 }

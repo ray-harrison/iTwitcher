@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iTwitcherViewController : UIViewController
+@interface iTwitcherViewController : UICollectionViewController
 
 @end
