@@ -7,7 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33094EB716B6D69400016B5E /* Subspecies.m in Sources */ = {isa = PBXBuildFile; fileRef = 33094EB616B6D69400016B5E /* Subspecies.m */; };
+		33094EBD16B6D83A00016B5E /* Species.m in Sources */ = {isa = PBXBuildFile; fileRef = 33094EBC16B6D83A00016B5E /* Species.m */; };
 		33330B4016AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33330B3E16AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld */; };
+		334B368C16B45DB2004DCFE3 /* Species+Query.m in Sources */ = {isa = PBXBuildFile; fileRef = 334B368B16B45DB2004DCFE3 /* Species+Query.m */; };
+		335242E116B5556B004CB402 /* iTwitcherCurrentMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335242E016B5556B004CB402 /* iTwitcherCurrentMapViewController.m */; };
+		335242E416B563E1004CB402 /* iTwitcherSpeciesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335242E316B563E1004CB402 /* iTwitcherSpeciesViewController.m */; };
+		335242E816B567BD004CB402 /* iTwitcherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 335242E716B567BD004CB402 /* iTwitcherCollectionViewCell.m */; };
+		335242EC16B59113004CB402 /* iTwitcherObservationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 335242EB16B59113004CB402 /* iTwitcherObservationAnnotation.m */; };
+		335242EF16B5912D004CB402 /* iTwitcherLocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 335242EE16B5912D004CB402 /* iTwitcherLocationAnnotation.m */; };
+		335242F216B59166004CB402 /* iTwitcherAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 335242F116B59166004CB402 /* iTwitcherAnnotationView.m */; };
+		335242F516B5922E004CB402 /* iTwitcherLocationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 335242F416B5922E004CB402 /* iTwitcherLocationAnnotationView.m */; };
+		335242F816B5B99E004CB402 /* SpeciesObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 335242F716B5B99E004CB402 /* SpeciesObservation.m */; };
+		335242FB16B5DF20004CB402 /* SpeciesObservation+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 335242FA16B5DF20004CB402 /* SpeciesObservation+Create.m */; };
+		335242FE16B5DF35004CB402 /* SpeciesObservation+Query.m in Sources */ = {isa = PBXBuildFile; fileRef = 335242FD16B5DF35004CB402 /* SpeciesObservation+Query.m */; };
+		3352430116B5DF57004CB402 /* ObservationLocation+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 3352430016B5DF57004CB402 /* ObservationLocation+Create.m */; };
+		3352430416B5DF72004CB402 /* ObservationLocation+Query.m in Sources */ = {isa = PBXBuildFile; fileRef = 3352430316B5DF71004CB402 /* ObservationLocation+Query.m */; };
+		3352AFEF16AFE7D100FA1D34 /* Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352AFED16AFE7D100FA1D34 /* Location.png */; };
+		3352AFF016AFE7D100FA1D34 /* Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352AFEE16AFE7D100FA1D34 /* Location@2x.png */; };
+		3352AFF516AFE91200FA1D34 /* ioc-names-3.1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3352AFF416AFE91100FA1D34 /* ioc-names-3.1.xml */; };
+		3352AFFE16B006D200FA1D34 /* ObservationLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3352AFFD16B006D200FA1D34 /* ObservationLocation.m */; };
+		3352B00416B006D200FA1D34 /* Photograph.m in Sources */ = {isa = PBXBuildFile; fileRef = 3352B00316B006D200FA1D34 /* Photograph.m */; };
+		3352B00716B0071100FA1D34 /* Species+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 3352B00616B0071100FA1D34 /* Species+Create.m */; };
 		337D545416ADF31B004F53AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545316ADF31B004F53AF /* UIKit.framework */; };
 		337D545616ADF31B004F53AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545516ADF31B004F53AF /* Foundation.framework */; };
 		337D545816ADF31B004F53AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545716ADF31B004F53AF /* CoreGraphics.framework */; };
@@ -42,9 +63,8 @@
 		337D54B216AE0B0D004F53AF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54A816AE0B0D004F53AF /* Icon@2x.png */; };
 		337D54B316AE0B0D004F53AF /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54A916AE0B0D004F53AF /* iTunesArtwork.png */; };
 		337D54B416AE0B0D004F53AF /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54AA16AE0B0D004F53AF /* iTunesArtwork@2x.png */; };
-		337D54B616AE0B45004F53AF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54B516AE0B45004F53AF /* Icon@2x.png */; };
-		337D54B816AE0B55004F53AF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54B716AE0B55004F53AF /* Icon.png */; };
-		337D54BA16AE0B69004F53AF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 337D54B916AE0B69004F53AF /* Default.png */; };
+		33D9A0E016B0A3EC005B1B70 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D9A0DF16B0A3EC005B1B70 /* SMXMLDocument.m */; };
+		33D9A0E116B0A5AB005B1B70 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D9A0DF16B0A3EC005B1B70 /* SMXMLDocument.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +78,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33094EB516B6D69400016B5E /* Subspecies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subspecies.h; sourceTree = "<group>"; };
+		33094EB616B6D69400016B5E /* Subspecies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subspecies.m; sourceTree = "<group>"; };
+		33094EBB16B6D83A00016B5E /* Species.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Species.h; sourceTree = "<group>"; };
+		33094EBC16B6D83A00016B5E /* Species.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Species.m; sourceTree = "<group>"; };
+		332A650116B6C6C100072C6D /* iTwitcherModel_1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTwitcherModel_1.0.xcdatamodel; sourceTree = "<group>"; };
 		33330B3F16AEC81B0045D3BC /* iTwitcherModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTwitcherModel.xcdatamodel; sourceTree = "<group>"; };
+		334B368A16B45DB2004DCFE3 /* Species+Query.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Species+Query.h"; sourceTree = "<group>"; };
+		334B368B16B45DB2004DCFE3 /* Species+Query.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Species+Query.m"; sourceTree = "<group>"; };
+		335242DF16B5556B004CB402 /* iTwitcherCurrentMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherCurrentMapViewController.h; sourceTree = "<group>"; };
+		335242E016B5556B004CB402 /* iTwitcherCurrentMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherCurrentMapViewController.m; sourceTree = "<group>"; };
+		335242E216B563E1004CB402 /* iTwitcherSpeciesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherSpeciesViewController.h; sourceTree = "<group>"; };
+		335242E316B563E1004CB402 /* iTwitcherSpeciesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherSpeciesViewController.m; sourceTree = "<group>"; };
+		335242E616B567BD004CB402 /* iTwitcherCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherCollectionViewCell.h; sourceTree = "<group>"; };
+		335242E716B567BD004CB402 /* iTwitcherCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherCollectionViewCell.m; sourceTree = "<group>"; };
+		335242EA16B59113004CB402 /* iTwitcherObservationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherObservationAnnotation.h; sourceTree = "<group>"; };
+		335242EB16B59113004CB402 /* iTwitcherObservationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherObservationAnnotation.m; sourceTree = "<group>"; };
+		335242ED16B5912D004CB402 /* iTwitcherLocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherLocationAnnotation.h; sourceTree = "<group>"; };
+		335242EE16B5912D004CB402 /* iTwitcherLocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherLocationAnnotation.m; sourceTree = "<group>"; };
+		335242F016B59166004CB402 /* iTwitcherAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherAnnotationView.h; sourceTree = "<group>"; };
+		335242F116B59166004CB402 /* iTwitcherAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherAnnotationView.m; sourceTree = "<group>"; };
+		335242F316B5922E004CB402 /* iTwitcherLocationAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherLocationAnnotationView.h; sourceTree = "<group>"; };
+		335242F416B5922E004CB402 /* iTwitcherLocationAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherLocationAnnotationView.m; sourceTree = "<group>"; };
+		335242F616B5B99E004CB402 /* SpeciesObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeciesObservation.h; sourceTree = "<group>"; };
+		335242F716B5B99E004CB402 /* SpeciesObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeciesObservation.m; sourceTree = "<group>"; };
+		335242F916B5DF20004CB402 /* SpeciesObservation+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpeciesObservation+Create.h"; sourceTree = "<group>"; };
+		335242FA16B5DF20004CB402 /* SpeciesObservation+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SpeciesObservation+Create.m"; sourceTree = "<group>"; };
+		335242FC16B5DF35004CB402 /* SpeciesObservation+Query.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpeciesObservation+Query.h"; sourceTree = "<group>"; };
+		335242FD16B5DF35004CB402 /* SpeciesObservation+Query.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SpeciesObservation+Query.m"; sourceTree = "<group>"; };
+		335242FF16B5DF57004CB402 /* ObservationLocation+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObservationLocation+Create.h"; sourceTree = "<group>"; };
+		3352430016B5DF57004CB402 /* ObservationLocation+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObservationLocation+Create.m"; sourceTree = "<group>"; };
+		3352430216B5DF71004CB402 /* ObservationLocation+Query.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObservationLocation+Query.h"; sourceTree = "<group>"; };
+		3352430316B5DF71004CB402 /* ObservationLocation+Query.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObservationLocation+Query.m"; sourceTree = "<group>"; };
+		3352AFED16AFE7D100FA1D34 /* Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location.png; sourceTree = "<group>"; };
+		3352AFEE16AFE7D100FA1D34 /* Location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location@2x.png"; sourceTree = "<group>"; };
+		3352AFF416AFE91100FA1D34 /* ioc-names-3.1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ioc-names-3.1.xml"; sourceTree = "<group>"; };
+		3352AFFC16B006D200FA1D34 /* ObservationLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservationLocation.h; sourceTree = "<group>"; };
+		3352AFFD16B006D200FA1D34 /* ObservationLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservationLocation.m; sourceTree = "<group>"; };
+		3352B00216B006D200FA1D34 /* Photograph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photograph.h; sourceTree = "<group>"; };
+		3352B00316B006D200FA1D34 /* Photograph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photograph.m; sourceTree = "<group>"; };
+		3352B00516B0071100FA1D34 /* Species+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Species+Create.h"; sourceTree = "<group>"; };
+		3352B00616B0071100FA1D34 /* Species+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Species+Create.m"; sourceTree = "<group>"; };
 		337D545016ADF31B004F53AF /* iTwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		337D545316ADF31B004F53AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		337D545516ADF31B004F53AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,9 +160,8 @@
 		337D54A816AE0B0D004F53AF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		337D54A916AE0B0D004F53AF /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		337D54AA16AE0B0D004F53AF /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		337D54B516AE0B45004F53AF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		337D54B716AE0B55004F53AF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		337D54B916AE0B69004F53AF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		33D9A0DE16B0A3EC005B1B70 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
+		33D9A0DF16B0A3EC005B1B70 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,24 +199,59 @@
 			isa = PBXGroup;
 			children = (
 				33330B3E16AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld */,
+				33094EBB16B6D83A00016B5E /* Species.h */,
+				33094EBC16B6D83A00016B5E /* Species.m */,
+				33094EB516B6D69400016B5E /* Subspecies.h */,
+				33094EB616B6D69400016B5E /* Subspecies.m */,
+				335242F616B5B99E004CB402 /* SpeciesObservation.h */,
+				335242F716B5B99E004CB402 /* SpeciesObservation.m */,
+				3352B00216B006D200FA1D34 /* Photograph.h */,
+				3352B00316B006D200FA1D34 /* Photograph.m */,
+				3352AFFC16B006D200FA1D34 /* ObservationLocation.h */,
+				3352AFFD16B006D200FA1D34 /* ObservationLocation.m */,
+				3352B00516B0071100FA1D34 /* Species+Create.h */,
+				3352B00616B0071100FA1D34 /* Species+Create.m */,
+				334B368A16B45DB2004DCFE3 /* Species+Query.h */,
+				334B368B16B45DB2004DCFE3 /* Species+Query.m */,
+				335242F916B5DF20004CB402 /* SpeciesObservation+Create.h */,
+				335242FA16B5DF20004CB402 /* SpeciesObservation+Create.m */,
+				335242FC16B5DF35004CB402 /* SpeciesObservation+Query.h */,
+				335242FD16B5DF35004CB402 /* SpeciesObservation+Query.m */,
+				335242FF16B5DF57004CB402 /* ObservationLocation+Create.h */,
+				3352430016B5DF57004CB402 /* ObservationLocation+Create.m */,
+				3352430216B5DF71004CB402 /* ObservationLocation+Query.h */,
+				3352430316B5DF71004CB402 /* ObservationLocation+Query.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		335242E516B56772004CB402 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				335242E616B567BD004CB402 /* iTwitcherCollectionViewCell.h */,
+				335242E716B567BD004CB402 /* iTwitcherCollectionViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		335242E916B590C9004CB402 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				335242EA16B59113004CB402 /* iTwitcherObservationAnnotation.h */,
+				335242EB16B59113004CB402 /* iTwitcherObservationAnnotation.m */,
+				335242ED16B5912D004CB402 /* iTwitcherLocationAnnotation.h */,
+				335242EE16B5912D004CB402 /* iTwitcherLocationAnnotation.m */,
+				335242F016B59166004CB402 /* iTwitcherAnnotationView.h */,
+				335242F116B59166004CB402 /* iTwitcherAnnotationView.m */,
+				335242F316B5922E004CB402 /* iTwitcherLocationAnnotationView.h */,
+				335242F416B5922E004CB402 /* iTwitcherLocationAnnotationView.m */,
+			);
+			name = Annotations;
 			sourceTree = "<group>";
 		};
 		337D544716ADF31B004F53AF = {
 			isa = PBXGroup;
 			children = (
-				337D54B916AE0B69004F53AF /* Default.png */,
-				337D54B716AE0B55004F53AF /* Icon.png */,
-				337D54B516AE0B45004F53AF /* Icon@2x.png */,
-				337D549F16ADF67C004F53AF /* Social.framework */,
-				337D549D16ADF66B004F53AF /* QuartzCore.framework */,
-				337D549B16ADF642004F53AF /* iAd.framework */,
-				337D549916ADF60D004F53AF /* QuickLook.framework */,
-				337D549716ADF601004F53AF /* CoreData.framework */,
-				337D549516ADF5F5004F53AF /* AddressBook.framework */,
-				337D549316ADF5A8004F53AF /* CoreLocation.framework */,
-				337D549116ADF59C004F53AF /* MapKit.framework */,
 				337D545916ADF31B004F53AF /* iTwitcher */,
 				337D548016ADF31C004F53AF /* iTwitcherTests */,
 				337D545216ADF31B004F53AF /* Frameworks */,
@@ -177,6 +271,14 @@
 		337D545216ADF31B004F53AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				337D549F16ADF67C004F53AF /* Social.framework */,
+				337D549D16ADF66B004F53AF /* QuartzCore.framework */,
+				337D549B16ADF642004F53AF /* iAd.framework */,
+				337D549916ADF60D004F53AF /* QuickLook.framework */,
+				337D549716ADF601004F53AF /* CoreData.framework */,
+				337D549516ADF5F5004F53AF /* AddressBook.framework */,
+				337D549316ADF5A8004F53AF /* CoreLocation.framework */,
+				337D549116ADF59C004F53AF /* MapKit.framework */,
 				337D545316ADF31B004F53AF /* UIKit.framework */,
 				337D545516ADF31B004F53AF /* Foundation.framework */,
 				337D545716ADF31B004F53AF /* CoreGraphics.framework */,
@@ -188,13 +290,16 @@
 		337D545916ADF31B004F53AF /* iTwitcher */ = {
 			isa = PBXGroup;
 			children = (
+				335242E916B590C9004CB402 /* Annotations */,
+				335242E516B56772004CB402 /* Views */,
+				33BB1F8416B17275007B60E9 /* View Controllers */,
 				33330B3D16AEC7F60045D3BC /* Model */,
 				337D546216ADF31B004F53AF /* iTwitcherAppDelegate.h */,
 				337D546316ADF31B004F53AF /* iTwitcherAppDelegate.m */,
+				33D9A0DE16B0A3EC005B1B70 /* SMXMLDocument.h */,
+				33D9A0DF16B0A3EC005B1B70 /* SMXMLDocument.m */,
 				337D546B16ADF31B004F53AF /* MainStoryboard_iPhone.storyboard */,
 				337D546E16ADF31B004F53AF /* MainStoryboard_iPad.storyboard */,
-				337D547116ADF31B004F53AF /* iTwitcherViewController.h */,
-				337D547216ADF31B004F53AF /* iTwitcherViewController.m */,
 				337D545A16ADF31B004F53AF /* Supporting Files */,
 			);
 			path = iTwitcher;
@@ -214,9 +319,12 @@
 				337D54A916AE0B0D004F53AF /* iTunesArtwork.png */,
 				337D54AA16AE0B0D004F53AF /* iTunesArtwork@2x.png */,
 				337D545B16ADF31B004F53AF /* iTwitcher-Info.plist */,
+				3352AFED16AFE7D100FA1D34 /* Location.png */,
+				3352AFEE16AFE7D100FA1D34 /* Location@2x.png */,
 				337D545C16ADF31B004F53AF /* InfoPlist.strings */,
 				337D545F16ADF31B004F53AF /* main.m */,
 				337D546116ADF31B004F53AF /* iTwitcher-Prefix.pch */,
+				3352AFF416AFE91100FA1D34 /* ioc-names-3.1.xml */,
 				337D546516ADF31B004F53AF /* Default.png */,
 				337D546716ADF31B004F53AF /* Default@2x.png */,
 				337D546916ADF31B004F53AF /* Default-568h@2x.png */,
@@ -241,6 +349,19 @@
 				337D548316ADF31C004F53AF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33BB1F8416B17275007B60E9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				337D547116ADF31B004F53AF /* iTwitcherViewController.h */,
+				337D547216ADF31B004F53AF /* iTwitcherViewController.m */,
+				335242DF16B5556B004CB402 /* iTwitcherCurrentMapViewController.h */,
+				335242E016B5556B004CB402 /* iTwitcherCurrentMapViewController.m */,
+				335242E216B563E1004CB402 /* iTwitcherSpeciesViewController.h */,
+				335242E316B563E1004CB402 /* iTwitcherSpeciesViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,9 +452,9 @@
 				337D54B216AE0B0D004F53AF /* Icon@2x.png in Resources */,
 				337D54B316AE0B0D004F53AF /* iTunesArtwork.png in Resources */,
 				337D54B416AE0B0D004F53AF /* iTunesArtwork@2x.png in Resources */,
-				337D54B616AE0B45004F53AF /* Icon@2x.png in Resources */,
-				337D54B816AE0B55004F53AF /* Icon.png in Resources */,
-				337D54BA16AE0B69004F53AF /* Default.png in Resources */,
+				3352AFEF16AFE7D100FA1D34 /* Location.png in Resources */,
+				3352AFF016AFE7D100FA1D34 /* Location@2x.png in Resources */,
+				3352AFF516AFE91200FA1D34 /* ioc-names-3.1.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,10 +489,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D9A0E116B0A5AB005B1B70 /* SMXMLDocument.m in Sources */,
 				337D546016ADF31B004F53AF /* main.m in Sources */,
 				337D546416ADF31B004F53AF /* iTwitcherAppDelegate.m in Sources */,
 				337D547316ADF31B004F53AF /* iTwitcherViewController.m in Sources */,
 				33330B4016AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld in Sources */,
+				3352AFFE16B006D200FA1D34 /* ObservationLocation.m in Sources */,
+				3352B00416B006D200FA1D34 /* Photograph.m in Sources */,
+				3352B00716B0071100FA1D34 /* Species+Create.m in Sources */,
+				334B368C16B45DB2004DCFE3 /* Species+Query.m in Sources */,
+				335242E116B5556B004CB402 /* iTwitcherCurrentMapViewController.m in Sources */,
+				335242E416B563E1004CB402 /* iTwitcherSpeciesViewController.m in Sources */,
+				335242E816B567BD004CB402 /* iTwitcherCollectionViewCell.m in Sources */,
+				335242EC16B59113004CB402 /* iTwitcherObservationAnnotation.m in Sources */,
+				335242EF16B5912D004CB402 /* iTwitcherLocationAnnotation.m in Sources */,
+				335242F216B59166004CB402 /* iTwitcherAnnotationView.m in Sources */,
+				335242F516B5922E004CB402 /* iTwitcherLocationAnnotationView.m in Sources */,
+				335242F816B5B99E004CB402 /* SpeciesObservation.m in Sources */,
+				335242FB16B5DF20004CB402 /* SpeciesObservation+Create.m in Sources */,
+				335242FE16B5DF35004CB402 /* SpeciesObservation+Query.m in Sources */,
+				3352430116B5DF57004CB402 /* ObservationLocation+Create.m in Sources */,
+				3352430416B5DF72004CB402 /* ObservationLocation+Query.m in Sources */,
+				33094EB716B6D69400016B5E /* Subspecies.m in Sources */,
+				33094EBD16B6D83A00016B5E /* Species.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				337D548816ADF31C004F53AF /* iTwitcherTests.m in Sources */,
+				33D9A0E016B0A3EC005B1B70 /* SMXMLDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +621,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -579,9 +721,10 @@
 		33330B3E16AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				332A650116B6C6C100072C6D /* iTwitcherModel_1.0.xcdatamodel */,
 				33330B3F16AEC81B0045D3BC /* iTwitcherModel.xcdatamodel */,
 			);
-			currentVersion = 33330B3F16AEC81B0045D3BC /* iTwitcherModel.xcdatamodel */;
+			currentVersion = 332A650116B6C6C100072C6D /* iTwitcherModel_1.0.xcdatamodel */;
 			path = iTwitcherModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

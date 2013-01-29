@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3083" systemVersion="12D54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sWo-GQ-Qle">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3083" systemVersion="12D58" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sWo-GQ-Qle">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -18,7 +18,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8r4-x7-Rda">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="8r4-x7-Rda" customClass="iTwitcherCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -26,8 +26,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="SXb-mv-NvQ" kind="push" id="Ksc-LZ-xh7"/>
+                                    <segue destination="SXb-mv-NvQ" kind="push" identifier="currentMap" id="Ksc-LZ-xh7"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -39,39 +40,59 @@
                     <toolbarItems>
                         <barButtonItem systemItem="action" id="S64-2N-M3T"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="KmS-BR-Rna"/>
+                    <navigationItem key="navigationItem" id="KmS-BR-Rna">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Qp2-qc-IKb">
+                            <connections>
+                                <action selector="addDocument:" destination="D9V-F8-jWv" id="wnS-jp-vcS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
+                    <connections>
+                        <outlet property="addDocumentButton" destination="Qp2-qc-IKb" id="1fz-CW-OQU"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dB8-2N-xsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="568" y="45"/>
         </scene>
-        <!--View Controller-->
+        <!--I Twitcher Current Map View Controller-->
         <scene sceneID="0DU-Qh-dN2">
             <objects>
-                <viewController id="SXb-mv-NvQ" sceneMemberID="viewController">
+                <viewController id="SXb-mv-NvQ" customClass="iTwitcherCurrentMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nl4-4f-gsI">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UfC-5i-oU4"/>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="gpB-26-2xF">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dBT-Dq-S3D"/>
+                                </constraints>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UfC-5i-oU4" firstAttribute="bottom" secondItem="Nl4-4f-gsI" secondAttribute="bottom" type="default" id="3Zd-Kv-YfW"/>
+                            <constraint firstItem="gpB-26-2xF" firstAttribute="leading" secondItem="Nl4-4f-gsI" secondAttribute="leading" type="default" id="UlB-Sx-abh"/>
                             <constraint firstItem="UfC-5i-oU4" firstAttribute="top" secondItem="Nl4-4f-gsI" secondAttribute="top" type="default" id="XS4-nj-wwL"/>
+                            <constraint firstItem="gpB-26-2xF" firstAttribute="bottom" secondItem="Nl4-4f-gsI" secondAttribute="bottom" type="default" id="bgq-Xx-ecQ"/>
+                            <constraint firstItem="gpB-26-2xF" firstAttribute="trailing" secondItem="Nl4-4f-gsI" secondAttribute="trailing" type="default" id="eeg-yy-aPL"/>
                             <constraint firstItem="UfC-5i-oU4" firstAttribute="trailing" secondItem="Nl4-4f-gsI" secondAttribute="trailing" type="default" id="lO2-tC-iMV"/>
                             <constraint firstItem="UfC-5i-oU4" firstAttribute="leading" secondItem="Nl4-4f-gsI" secondAttribute="leading" type="default" id="z4g-GF-uaU"/>
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Item" id="aoL-GB-nVq"/>
+                        <barButtonItem image="Location.png" id="aoL-GB-nVq"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ebf-eF-6IF"/>
                         <barButtonItem systemItem="pageCurl" id="iSt-Er-gvS"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="Lwt-Qj-luW"/>
+                    <navigationItem key="navigationItem" id="Lwt-Qj-luW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="xMH-X1-kuy"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
+                        <outlet property="mapView" destination="UfC-5i-oU4" id="uSo-qH-lYC"/>
                         <segue destination="Fk8-UG-OfW" kind="push" identifier="AddBirds" id="mi9-qP-1Un"/>
                     </connections>
                 </viewController>
@@ -93,17 +114,25 @@
             </objects>
             <point key="canvasLocation" x="979" y="749"/>
         </scene>
-        <!--Table View Controller-->
+        <!--I Twitcher Species View Controller-->
         <scene sceneID="9cS-8n-0Qj">
             <objects>
-                <tableViewController id="Fk8-UG-OfW" sceneMemberID="viewController">
+                <tableViewController id="Fk8-UG-OfW" customClass="iTwitcherSpeciesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Cic-1G-gIJ">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="blackOpaque" id="if7-d3-q7f">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Fk8-UG-OfW" id="kAv-Je-sbF"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Species Cell" textLabel="Hdj-La-zy7" detailTextLabel="7Ck-c4-u8s" style="IBUITableViewCellStyleSubtitle" id="pDb-Tp-osa">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -127,17 +156,25 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Fk8-UG-OfW" id="JVm-Wl-CUl"/>
-                            <outlet property="delegate" destination="Fk8-UG-OfW" id="5Dh-Gb-ZhN"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="hhh-bF-0PR"/>
                     <connections>
+                        <outlet property="searchDisplayController" destination="geJ-BM-FeP" id="0PT-iK-bme"/>
                         <segue destination="KN9-JF-WnU" kind="push" identifier="speciesWeb" id="p4g-2n-4kW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGP-Ye-bzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="5gu-G8-eyF"/>
+                <searchDisplayController id="i4b-zi-49P"/>
+                <searchDisplayController id="geJ-BM-FeP">
+                    <connections>
+                        <outlet property="delegate" destination="Fk8-UG-OfW" id="b5j-xv-WZD"/>
+                        <outlet property="searchBar" destination="if7-d3-q7f" id="Mip-qN-Beg"/>
+                        <outlet property="searchContentsController" destination="Fk8-UG-OfW" id="Tdf-Yg-dpS"/>
+                        <outlet property="searchResultsDataSource" destination="Fk8-UG-OfW" id="b3N-v3-0Ng"/>
+                        <outlet property="searchResultsDelegate" destination="Fk8-UG-OfW" id="2il-Ww-IWQ"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1394" y="149"/>
         </scene>
@@ -216,29 +253,9 @@
             <point key="canvasLocation" x="131" y="45"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-        <class className="iTwitcherViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/iTwitcherViewController.h"/>
-        </class>
-    </classes>
+    <resources>
+        <image name="Location.png" width="20" height="20"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
