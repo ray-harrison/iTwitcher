@@ -38,6 +38,7 @@
     if (self) {
         _coordinate = coord;
         _radius = radius;
+        
         // set up region
         _region = [[CLRegion alloc] initCircularRegionWithCenter:coord
                                                           radius:_radius

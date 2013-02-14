@@ -14,7 +14,7 @@
 
 + (id)initWithAnnotation:(id <MKAnnotation>)annotation map:(MKMapView *)annotationMap;
 
-- (id)initWithAnnotation:(id <MKAnnotation>)annotation;
+//- (id)initWithAnnotation:(id <MKAnnotation>)annotation;
 - (void)updateRadiusOverlay;
 - (void)removeRadiusOverlay;
 @end

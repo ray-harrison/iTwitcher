@@ -11,5 +11,6 @@
 @interface Species (Query)
 +(NSFetchedResultsController *) newSearchFetchedResultsControllerWithSearch:(NSString *)searchText inManagedContext: (NSManagedObjectContext *) context;
 +(NSFetchedResultsController *) newFetchedResultsControllerInManagedContext: (NSManagedObjectContext *) context;
++(Species *)speciesInContext:(NSManagedObjectContext *) context byName:(NSString *)name;
 
 @end

@@ -17,6 +17,8 @@
    familyEnglishName:(NSString *)familyEnglishName genusLatinName:(NSString *)genusLatinName speciesEnglishName:(NSString *)speciesEnglishName
     speciesLatinName:(NSString *)speciesLatinName breedingRegions:(NSString *)breedingRegions breedingSubregions:(NSString *)breedingSubregions speciesXML:(SMXMLElement *)speciesXML
 {
+    // Create a species record with no subspecies entry
+    
     Species *species = [NSEntityDescription insertNewObjectForEntityForName:@"Species" inManagedObjectContext:context];
     species.orderLatinName = orderLatinName;
     species.familyLatinName = familyLatinName;
@@ -26,16 +28,25 @@
     species.speciesLatinName = speciesLatinName;
     species.breedingRegion = breedingRegions;
     species.breedingSubregion = breedingSubregions;
+    // Do we have subspecies?
     NSArray *subspeciesListXML = [speciesXML childrenNamed:@"subspecies"];
-    
-    for (SMXMLElement *subspeciesXML in subspeciesListXML ) {
-        NSString *subspeciesLatinName = [subspeciesXML valueWithPath:@"latin_name"];
-        NSString *breedingSubregion = [subspeciesXML valueWithPath:@"breeding_subregion"];
-        Subspecies *subspecies = [NSEntityDescription insertNewObjectForEntityForName:@"Subspecies" inManagedObjectContext:context];
-        subspecies.subspeciesLatinName = subspeciesLatinName;
-        subspecies.breedingSubregion = breedingSubregion;
-        [species addSubspeciesObject:subspecies];
-    }
+    if ([subspeciesListXML count]>0) {
+        for (SMXMLElement *subspeciesXML in subspeciesListXML ) {
+            Species *species = [NSEntityDescription insertNewObjectForEntityForName:@"Species" inManagedObjectContext:context];
+            species.orderLatinName = orderLatinName;
+            species.familyLatinName = familyLatinName;
+            species.familyEnglishName = familyEnglishName;
+            species.genusLatinName = genusLatinName;
+            species.speciesEnglishName = speciesEnglishName;
+            species.speciesLatinName = speciesLatinName;
+            species.breedingRegion = breedingRegions;
+            species.breedingSubregion = breedingSubregions;
+        
+            species.subspeciesLatinName = [subspeciesXML valueWithPath:@"latin_name"];
+            species.subspeciesBreedingSubregion = [subspeciesXML valueWithPath:@"breeding_subregion"];
+        }
+    } 
+  
 }
 
 //Regions parsing: ","
@@ -80,14 +91,14 @@
                     if (breedingRegionsArray.count == 0) {
                         [self buildSpecies:context orderLatinName:orderLatinName familyLatinName:familyLatinName
                          familyEnglishName:familyEnglishName genusLatinName:genusLatinName speciesEnglishName:speciesEnglishName
-                          speciesLatinName:speciesLatinName breedingRegions:breedingRegions breedingSubregions:breedingSubregions speciesXML:speciesXML];
+                          speciesLatinName:speciesLatinName breedingRegions:[breedingRegions stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] breedingSubregions:breedingSubregions speciesXML:speciesXML];
                         [context save:nil];
                     }
                     
                     for (NSString *breedingRegion in breedingRegionsArray){
                         [self buildSpecies:context orderLatinName:orderLatinName familyLatinName:familyLatinName
                          familyEnglishName:familyEnglishName genusLatinName:genusLatinName speciesEnglishName:speciesEnglishName
-                          speciesLatinName:speciesLatinName breedingRegions:breedingRegion breedingSubregions:breedingSubregions speciesXML:speciesXML];
+                          speciesLatinName:speciesLatinName breedingRegions:[breedingRegion stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] breedingSubregions:breedingSubregions speciesXML:speciesXML];
                         
                     }
                     [context save:nil];

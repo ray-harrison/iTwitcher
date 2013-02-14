@@ -9,5 +9,6 @@
 #import "SpeciesObservation.h"
 
 @interface SpeciesObservation (Query)
-
++(NSArray *) getObservationsInContext:(NSManagedObjectContext *)context;
++(SpeciesObservation *)getObservationInContext:(NSManagedObjectContext *)context byLatitude:(NSNumber *)latitude andLongitude:(NSNumber *)longitude;
 @end

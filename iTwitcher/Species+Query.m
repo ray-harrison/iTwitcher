@@ -16,7 +16,7 @@
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Species"];
     
-    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"breedingRegion == %@",@"NA"];
+    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"breedingRegion == %@ and subspeciesLatinName == nil",@"NA"];
     
     
     
@@ -38,12 +38,14 @@
     NSSortDescriptor *speciesCommonNameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"speciesEnglishName" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     request.sortDescriptors = @[familyCommonNameSortDescriptor,speciesCommonNameSortDescriptor];
     
-    //[request setFetchLimit:50];
+    if ([searchText length] < 3) {
+      [request setFetchLimit:25];  
+    }//[request setFetchLimit:25];
     
-    //[request setFetchBatchSize:25];
+   // [request setFetchBatchSize:25];
     //[request setPropertiesToFetch:@[@"genus.family.englishName",@"englishName"]];
     
-    
+    request.includesSubentities = YES;
     
     
     NSFetchedResultsController *searchFetchedResultsController =
@@ -66,7 +68,7 @@
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Species"];
     
-    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"breedingRegion == %@",@"NA"];
+    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"breedingRegion == %@ and subspeciesLatinName == nil",@"NA"];
     
    // NALog(@"Request Predicate %@",request);
     
@@ -97,6 +99,15 @@
     
     
     return fetchedResultsController;
+}
++(Species *) speciesInContext:(NSManagedObjectContext *)context byName:(NSString *)name
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Species"];
+    NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"speciesEnglishName == %@",name];
+    request.predicate = searchPredicate;
+    NSError *error = nil;
+    NSArray *speciesArray = [context executeFetchRequest:request error:&error];
+    return [speciesArray objectAtIndex:0];
 }
 
 @end

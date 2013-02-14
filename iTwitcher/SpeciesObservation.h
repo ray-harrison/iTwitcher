@@ -2,14 +2,14 @@
 //  SpeciesObservation.h
 //  iTwitcher
 //
-//  Created by Raymond Harrison on 1/27/13.
+//  Created by Raymond Harrison on 2/6/13.
 //  Copyright (c) 2013 Raymond Harrison. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class ObservationLocation, Photograph, Species;
+@class ObservationGroup, Photograph, Species, Subspecies;
 
 @interface SpeciesObservation : NSManagedObject
 
@@ -34,16 +34,17 @@
 @property (nonatomic, retain) NSNumber * sexUnknownAgeUnknown;
 @property (nonatomic, retain) NSNumber * sexUnknownImmature;
 @property (nonatomic, retain) NSNumber * sexUnknownJuvenile;
-@property (nonatomic, retain) ObservationLocation *observationLocation;
-@property (nonatomic, retain) NSSet *photos;
 @property (nonatomic, retain) Species *species;
+@property (nonatomic, retain) Subspecies *subspecies;
+@property (nonatomic, retain) NSSet *photographs;
+@property (nonatomic, retain) ObservationGroup *observationGroup;
 @end
 
 @interface SpeciesObservation (CoreDataGeneratedAccessors)
 
-- (void)addPhotosObject:(Photograph *)value;
-- (void)removePhotosObject:(Photograph *)value;
-- (void)addPhotos:(NSSet *)values;
-- (void)removePhotos:(NSSet *)values;
+- (void)addPhotographsObject:(Photograph *)value;
+- (void)removePhotographsObject:(Photograph *)value;
+- (void)addPhotographs:(NSSet *)values;
+- (void)removePhotographs:(NSSet *)values;
 
 @end

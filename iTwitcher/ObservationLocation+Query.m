@@ -29,13 +29,18 @@
     request.sortDescriptors = @[locationNameSortDescriptor];
     NSError *error = nil;
     NSArray *locationArray = [context executeFetchRequest:request error:&error];
-    NSLog(@"Fetch %@",request.debugDescription);
+   // NSLog(@"Fetch %@",request.debugDescription);
     return locationArray;
     
 }
-+(NSSet *) getSpeciesObservationsForObservationLocation:(ObservationLocation *)observationLocation
+
++(NSArray *) getSpeciesObservationsInContext:(NSManagedObjectContext *)context
 {
-    return observationLocation.speciesObservations;
+    return nil;
+}
++(NSSet *) getObservationCollectionsForObservationLocation:(ObservationLocation *)observationLocation
+{
+    return observationLocation.observationCollections;
     
 }
 @end

@@ -25,7 +25,7 @@ BOOL isRadiusUpdated;
     
     
     annotationView.pinColor = MKPinAnnotationColorGreen;
-    
+    annotationView.canShowCallout = YES;
     
     if ([annotation isKindOfClass:[iTwitcherLocationAnnotation class]]) {
         annotationView.theAnnotation = (iTwitcherLocationAnnotation *)annotation;
@@ -46,8 +46,10 @@ BOOL isRadiusUpdated;
 
 -(id) initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
 {
-    
-    return [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+    NSLog(@"In Init With Annotation Reuse Identifier");
+    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+    self.canShowCallout = YES;
+    return self;
 }
 
 -(id) initWithAnnotation:(id<MKAnnotation>)annotation map:(MKMapView *)annotationMap
@@ -58,8 +60,11 @@ BOOL isRadiusUpdated;
 }
 
 
+
+
 - (void)removeRadiusOverlay {
 	// Find the overlay for this annotation view and remove it if it has the same coordinates.
+    NSLog(@"Called Remove Radius Overlay");
 	for (id overlay in [self.map overlays]) {
 		if ([overlay isKindOfClass:[MKCircle class]]) {
 			MKCircle *circleOverlay = (MKCircle *)overlay;
@@ -77,6 +82,8 @@ BOOL isRadiusUpdated;
 
 
 - (void)updateRadiusOverlay {
+    NSLog(@"In Update Radius Overlay");
+    self.canShowCallout = YES;
 	if (!isRadiusUpdated) {
 		isRadiusUpdated = YES;
 		

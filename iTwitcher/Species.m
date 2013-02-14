@@ -2,7 +2,7 @@
 //  Species.m
 //  iTwitcher
 //
-//  Created by Raymond Harrison on 1/28/13.
+//  Created by Raymond Harrison on 2/9/13.
 //  Copyright (c) 2013 Raymond Harrison. All rights reserved.
 //
 
@@ -13,14 +13,16 @@
 
 @implementation Species
 
+@dynamic breedingRegion;
+@dynamic breedingSubregion;
 @dynamic familyEnglishName;
 @dynamic familyLatinName;
 @dynamic genusLatinName;
 @dynamic orderLatinName;
 @dynamic speciesEnglishName;
-@dynamic breedingRegion;
-@dynamic breedingSubregion;
 @dynamic speciesLatinName;
+@dynamic subspeciesLatinName;
+@dynamic subspeciesBreedingSubregion;
 @dynamic speciesObservations;
 @dynamic subspecies;
 

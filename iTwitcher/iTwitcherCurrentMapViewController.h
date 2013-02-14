@@ -10,9 +10,13 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <iAd/iAd.h>
-@interface iTwitcherCurrentMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, ADBannerViewDelegate>
+#import "iTwitcherMapDetailsViewController.h"
+#import "iTwitcherSpeciesObservationMasterViewController.h"
+@interface iTwitcherCurrentMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, ADBannerViewDelegate, iTwitcherMapDetailsDelegate,iTwitcherSpeciesObservationMasterDelegate>
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) UIManagedDocument *birdDatabase;
 @property (nonatomic, weak) NSString *birdDatabaseURL;
+
+- (IBAction)currentLocation:(id)sender;
 @end

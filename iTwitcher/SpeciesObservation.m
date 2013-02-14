@@ -2,14 +2,15 @@
 //  SpeciesObservation.m
 //  iTwitcher
 //
-//  Created by Raymond Harrison on 1/27/13.
+//  Created by Raymond Harrison on 2/6/13.
 //  Copyright (c) 2013 Raymond Harrison. All rights reserved.
 //
 
 #import "SpeciesObservation.h"
-#import "ObservationLocation.h"
+#import "ObservationGroup.h"
 #import "Photograph.h"
 #import "Species.h"
+#import "Subspecies.h"
 
 
 @implementation SpeciesObservation
@@ -35,8 +36,9 @@
 @dynamic sexUnknownAgeUnknown;
 @dynamic sexUnknownImmature;
 @dynamic sexUnknownJuvenile;
-@dynamic observationLocation;
-@dynamic photos;
 @dynamic species;
+@dynamic subspecies;
+@dynamic photographs;
+@dynamic observationGroup;
 
 @end

@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12D58" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ObservationBookmark" representedClassName="ObservationBookmark" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recent" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="ObservationCollection" representedClassName="ObservationCollection" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="observationGroups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ObservationGroup" inverseName="observationCollection" inverseEntity="ObservationGroup" syncable="YES"/>
+        <relationship name="observationLocation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ObservationLocation" inverseName="observationCollections" inverseEntity="ObservationLocation" syncable="YES"/>
+    </entity>
+    <entity name="ObservationGroup" representedClassName="ObservationGroup" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="observationCollection" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ObservationCollection" inverseName="observationGroups" inverseEntity="ObservationCollection" syncable="YES"/>
+        <relationship name="speciesObservations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SpeciesObservation" inverseName="observationGroup" inverseEntity="SpeciesObservation" syncable="YES"/>
+    </entity>
     <entity name="ObservationLocation" representedClassName="ObservationLocation" syncable="YES">
         <attribute name="centerLatitude" optional="YES" attributeType="Float" defaultValueString="0.0" indexed="YES" syncable="YES"/>
         <attribute name="centerLongitude" optional="YES" attributeType="Float" defaultValueString="0.0" indexed="YES" syncable="YES"/>
@@ -7,13 +23,13 @@
         <attribute name="locationDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="radius" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="speciesObservations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SpeciesObservation" inverseName="observationLocation" inverseEntity="SpeciesObservation" syncable="YES"/>
+        <relationship name="observationCollections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ObservationCollection" inverseName="observationLocation" inverseEntity="ObservationCollection" syncable="YES"/>
     </entity>
     <entity name="Photograph" representedClassName="Photograph" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="photoDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="speciesObservation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SpeciesObservation" inverseName="photos" inverseEntity="SpeciesObservation" syncable="YES"/>
+        <relationship name="speciesObservation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SpeciesObservation" inverseName="photographs" inverseEntity="SpeciesObservation" syncable="YES"/>
     </entity>
     <entity name="Species" representedClassName="Species" syncable="YES">
         <attribute name="breedingRegion" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
@@ -24,8 +40,14 @@
         <attribute name="orderLatinName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speciesEnglishName" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="speciesLatinName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="speciesObservations" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SpeciesObservation" inverseName="species" inverseEntity="SpeciesObservation" syncable="YES"/>
+        <attribute name="subspeciesBreedingSubregion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subspeciesLatinName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="speciesObservations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SpeciesObservation" inverseName="species" inverseEntity="SpeciesObservation" syncable="YES"/>
         <relationship name="subspecies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Subspecies" inverseName="species" inverseEntity="Subspecies" syncable="YES"/>
+    </entity>
+    <entity name="SpeciesBookmark" representedClassName="SpeciesBookmark" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recent" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="SpeciesObservation" representedClassName="SpeciesObservation" syncable="YES">
         <attribute name="behavior" optional="YES" attributeType="String" syncable="YES"/>
@@ -49,20 +71,26 @@
         <attribute name="sexUnknownAgeUnknown" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="sexUnknownImmature" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="sexUnknownJuvenile" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="observationLocation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ObservationLocation" inverseName="speciesObservations" inverseEntity="ObservationLocation" syncable="YES"/>
-        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photograph" inverseName="speciesObservation" inverseEntity="Photograph" syncable="YES"/>
+        <relationship name="observationGroup" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ObservationGroup" inverseName="speciesObservations" inverseEntity="ObservationGroup" syncable="YES"/>
+        <relationship name="photographs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photograph" inverseName="speciesObservation" inverseEntity="Photograph" syncable="YES"/>
         <relationship name="species" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Species" inverseName="speciesObservations" inverseEntity="Species" syncable="YES"/>
+        <relationship name="subspecies" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Subspecies" inverseName="speciesObservations" inverseEntity="Subspecies" syncable="YES"/>
     </entity>
     <entity name="Subspecies" representedClassName="Subspecies" syncable="YES">
         <attribute name="breedingSubregion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subspeciesLatinName" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <relationship name="species" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Species" inverseName="subspecies" inverseEntity="Species" syncable="YES"/>
+        <relationship name="speciesObservations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SpeciesObservation" inverseName="subspecies" inverseEntity="SpeciesObservation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ObservationLocation" positionX="232" positionY="-117" width="128" height="148"/>
-        <element name="Photograph" positionX="297" positionY="333" width="128" height="103"/>
-        <element name="Species" positionX="-171" positionY="162" width="128" height="195"/>
-        <element name="SpeciesObservation" positionX="502" positionY="429" width="128" height="403"/>
-        <element name="Subspecies" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="ObservationBookmark" positionX="-828" positionY="-54" width="128" height="75"/>
+        <element name="ObservationCollection" positionX="-1125" positionY="27" width="128" height="118"/>
+        <element name="ObservationGroup" positionX="-1125" positionY="189" width="128" height="88"/>
+        <element name="ObservationLocation" positionX="-1134" positionY="-162" width="128" height="148"/>
+        <element name="Photograph" positionX="-974" positionY="-162" width="128" height="103"/>
+        <element name="Species" positionX="-819" positionY="180" width="128" height="225"/>
+        <element name="SpeciesBookmark" positionX="-828" positionY="-153" width="128" height="75"/>
+        <element name="SpeciesObservation" positionX="-972" positionY="-25" width="128" height="418"/>
+        <element name="Subspecies" positionX="-828" positionY="36" width="128" height="103"/>
     </elements>
 </model>

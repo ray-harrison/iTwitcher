@@ -10,4 +10,5 @@
 
 @interface ObservationLocation (Create)
 -(id) initWithContext:(NSManagedObjectContext *)context;
+-(id) initWithContext:(NSManagedObjectContext *)context name:(NSString *)name;
 @end

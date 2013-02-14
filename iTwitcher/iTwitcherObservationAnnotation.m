@@ -21,12 +21,24 @@
     return annotation;
 }
 
+
++(iTwitcherObservationAnnotation *) annotationForObservationCollection:(ObservationCollection *) obs
+{
+    CLLocationCoordinate2D touchMapCoordinate = CLLocationCoordinate2DMake([obs.latitude floatValue], [obs.longitude floatValue]);
+    iTwitcherObservationAnnotation *annotation = [[iTwitcherObservationAnnotation alloc] initWithLocation:touchMapCoordinate observationCollection:obs];
+    // self = [[iBirderObservationAnnotation alloc] initWithLocation:touchMapCoordinate];
+   // self.observationCollection = obs;
+    
+    //self = annotation;
+    return annotation;
+}
+
 -(NSString *) title
 {
     
     
-    return [NSString stringWithFormat:@"%@ (%3.5f, %3.5f)",
-            self.observation.observationLocation.name,  [self.observation.latitude floatValue], [self.observation.longitude floatValue]];
+    return [NSString stringWithFormat:@"%@",
+            self.observationCollection.name];
     
 }
 
@@ -43,6 +55,15 @@
     if (self) {
         self.coordinate = coord;
         self.observation = obs;
+    }
+    return self;
+}
+
+- (id)initWithLocation:(CLLocationCoordinate2D)coord observationCollection:(ObservationCollection *)obs{
+    self = [super init];
+    if (self) {
+        self.coordinate = coord;
+        self.observationCollection = obs;
     }
     return self;
 }

@@ -7,6 +7,9 @@
 //
 
 #import "iTwitcherSpeciesViewController.h"
+#import "BirdInfoViewController.h"
+#import "iTwitcherSubspeciesViewController.h"
+#import "iTwitcherSpeciesObservationViewController.h"
 
 @interface iTwitcherSpeciesViewController ()
 {
@@ -67,11 +70,11 @@ NSMutableArray *searchResults;
     NSLog(@"Starting setup fetched results controller");
     
     // Create a background context to query
-    NSManagedObjectContext *backgroundContext = [[NSManagedObjectContext alloc] init];
-    [backgroundContext setPersistentStoreCoordinator:[self.birdDatabase.managedObjectContext persistentStoreCoordinator]];
-    NSLog(@"Got background context");
+   // NSManagedObjectContext *backgroundContext = [[NSManagedObjectContext alloc] init];
+   // [backgroundContext setPersistentStoreCoordinator:[self.birdDatabase.managedObjectContext persistentStoreCoordinator]];
+   // NSLog(@"Got background context");
     self.fetchedResultsController =
-    [Species newFetchedResultsControllerInManagedContext:backgroundContext];
+    [Species newFetchedResultsControllerInManagedContext:[self.birdDatabase managedObjectContext]];
     
     NSLog(@"Setup fetched results controller");
     
@@ -94,19 +97,22 @@ NSMutableArray *searchResults;
 {
     
     if (self.fetchedResultsController) {
-        
+        NSError *error=nil;
+        [self.fetchedResultsController performFetch:&error];
+        NSLog(@" Size of Fethed Objects Array %d",[self.fetchedResultsController fetchedObjects].count);
+        if (error) NSLog(@"[%@ %@] %@ (%@)", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [error localizedDescription], [error localizedFailureReason]);
         //NSError *error=nil;
-        dispatch_queue_t queryQueue = dispatch_queue_create("query queue", NULL);
+       // dispatch_queue_t queryQueue = dispatch_queue_create("query queue", NULL);
         
-        dispatch_async(queryQueue, ^{
-            NSError *error=nil;
-            [self.fetchedResultsController performFetch:&error];
-            NSLog(@" Size of Fethed Objects Array %d",[self.fetchedResultsController fetchedObjects].count);
-            if (error) NSLog(@"[%@ %@] %@ (%@)", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [error localizedDescription], [error localizedFailureReason]);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
-            });
-        });
+        //dispatch_async(queryQueue, ^{
+        //  NSError *error=nil;
+        //    [self.fetchedResultsController performFetch:&error];
+        //    NSLog(@" Size of Fethed Objects Array %d",[self.fetchedResultsController fetchedObjects].count);
+        //    if (error) NSLog(@"[%@ %@] %@ (%@)", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [error localizedDescription], [error localizedFailureReason]);
+        //    dispatch_async(dispatch_get_main_queue(), ^{
+        //        [self.tableView reloadData];
+        //    });
+        //});
         //dispatch_release(queryQueue);
         
     } else {
@@ -123,6 +129,7 @@ NSMutableArray *searchResults;
 - (void)performSearchFetch
 {
     NSLog(@"Perform Search Fetch");
+    
     if (self.searchFetchedResultsController) {
         NSError *error = nil;
         [self.searchFetchedResultsController performFetch:&error];
@@ -136,6 +143,7 @@ NSMutableArray *searchResults;
         [self setupSearchFetchedResultsController];
         NSLog(@"No search fetched view controller");
     }
+     
     /*
     if (self.searchFetchedResultsController) {
         
@@ -160,6 +168,7 @@ NSMutableArray *searchResults;
         NSLog(@"No search fetched view controller");
     }
      */
+     
     
 }
 
@@ -396,7 +405,7 @@ NSMutableArray *searchResults;
     //     }
     //
     //   }
-    cell.textLabel.text = species.speciesEnglishName;
+    cell.textLabel.text = (species.subspeciesLatinName != nil)?[NSString stringWithFormat:@"%@  (%@)",species.speciesEnglishName,species.subspeciesLatinName ]:species.speciesEnglishName;
     
     cell.detailTextLabel.text = species.genusLatinName;
     
@@ -413,6 +422,17 @@ NSMutableArray *searchResults;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"didSelectRowAtIndexPath");
+    self.tappedSpecies = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
+    NSLog(@"Species Name %@",self.tappedSpecies.speciesEnglishName);
+  //  Species * species = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
+    
+  //  if (self.tappedSpecies.subspecies.count>0) {
+  //    [self performSegueWithIdentifier:@"subSpecies" sender:self];
+  //  } else {
+       [self performSegueWithIdentifier:@"speciesObservation" sender:self]; 
+  //  }
+     
+    
     // [self performSegueWithIdentifier:@"observationDetails" sender:self];
     // self.tappedSpecies = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
     
@@ -487,6 +507,19 @@ NSMutableArray *searchResults;
     return [[self fetchedResultsControllerForTableView:tableView] sectionIndexTitles];
 }
 
+-(void)didCancel:(iTwitcherSpeciesObservationViewController *)controller
+{
+    
+}
+
+-(void) didCreateObservation:(iTwitcherSpeciesObservationViewController *)controller speciesObservation:(SpeciesObservation *)speciesObservation
+{
+    self.speciesObservation = speciesObservation;
+    [self.observationGroup addSpeciesObservationsObject:speciesObservation];
+    [[self.birdDatabase managedObjectContext] save:nil];
+    NSLog(@"Created Observation");
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
@@ -497,18 +530,39 @@ NSMutableArray *searchResults;
      //   iBirderObservationViewController *observationController = segue.destinationViewController;
       //  observationController.speciesName = self.tappedSpecies.englishName;
         
-    } else if ([segue.identifier isEqualToString:@"birdWiki"] ) {
+    } else if ([segue.identifier isEqualToString:@"speciesWeb"] ) {
         
-      //  BirdInfoViewController *birdInfoViewController = segue.destinationViewController;
+       BirdInfoViewController *birdInfoViewController = segue.destinationViewController;
         
         
-     //   birdInfoViewController.speciesName = [self.tappedSpecies englishName];
+       birdInfoViewController.speciesName = [self.tappedSpecies speciesEnglishName];
         
-    } else if ([segue.identifier isEqualToString:@"observationDetails"]) {
-        NSLog(@"Observation Details Segue");
-       // iBirderObservationDetailViewController *observationDetailViewController = segue.destinationViewController;
-      //  observationDetailViewController.navigationController.title=@"Observation Detail";
+    } else if ([segue.identifier isEqualToString:@"speciesObservation"]) {
+        iTwitcherSpeciesObservationViewController *speciesObservationViewController = segue.destinationViewController;
+        speciesObservationViewController.birdDatabase = self.birdDatabase;
+        SpeciesObservation *speciesObservation = [[SpeciesObservation alloc] initWithContext:[self.birdDatabase managedObjectContext] ];
+        speciesObservationViewController.speciesObservation = speciesObservation;
+        Species *speciesSelection = self.tappedSpecies;
+        [speciesObservationViewController.speciesObservation setSpecies:speciesSelection];
         
+        speciesObservationViewController.currentObservationCoordinate = self.location;
+        speciesObservationViewController.species = speciesSelection;
+        [self.observationGroup addSpeciesObservationsObject:speciesObservation];
+        
+        NSLog(@"Going to Species Observation");
+        
+        
+    } else if ([segue.identifier isEqualToString:@"subSpecies"] ) {
+        iTwitcherSubspeciesViewController *subspeciesViewController = segue.destinationViewController;
+        
+        Species *species = self.tappedSpecies;
+        NSArray *subspecies = [species.subspecies allObjects];
+        subspeciesViewController.subspecies = [NSMutableArray arrayWithArray:subspecies];
+        subspeciesViewController.birdDatabase = self.birdDatabase;
+        subspeciesViewController.speciesObservation = self.speciesObservation;
+        subspeciesViewController.currentObservationCoordinate = self.location;
+        subspeciesViewController.observationLocation = self.observationLocation;
+        NSLog(@"Species Observation going to Subspecies %@",self.speciesObservation);
     }
     
     
@@ -763,7 +817,7 @@ NSMutableArray *searchResults;
 {
     self.tappedSpecies = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
     
-    [self performSegueWithIdentifier:@"birdWiki" sender:self];
+    [self performSegueWithIdentifier:@"speciesWeb" sender:self];
 }
 
 
