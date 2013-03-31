@@ -12,5 +12,7 @@
 +(NSFetchedResultsController *) newSearchFetchedResultsControllerWithSearch:(NSString *)searchText inManagedContext: (NSManagedObjectContext *) context;
 +(NSFetchedResultsController *) newFetchedResultsControllerInManagedContext: (NSManagedObjectContext *) context;
 +(Species *)speciesInContext:(NSManagedObjectContext *) context byName:(NSString *)name;
++(NSArray *) speciesWithObservations:(NSManagedObjectContext *) context;
++(NSArray *) speciesWithObservationsWeek:(NSManagedObjectContext *) context;
 
 @end

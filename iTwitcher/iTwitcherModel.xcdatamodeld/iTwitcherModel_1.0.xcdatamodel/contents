@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="ObservationBookmark" representedClassName="ObservationBookmark" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recent" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -44,6 +44,7 @@
         <attribute name="subspeciesLatinName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="speciesObservations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SpeciesObservation" inverseName="species" inverseEntity="SpeciesObservation" syncable="YES"/>
         <relationship name="subspecies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Subspecies" inverseName="species" inverseEntity="Subspecies" syncable="YES"/>
+        <relationship name="watchList" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SpeciesWatchlist" inverseName="species" inverseEntity="SpeciesWatchlist" syncable="YES"/>
     </entity>
     <entity name="SpeciesBookmark" representedClassName="SpeciesBookmark" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -76,6 +77,20 @@
         <relationship name="species" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Species" inverseName="speciesObservations" inverseEntity="Species" syncable="YES"/>
         <relationship name="subspecies" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Subspecies" inverseName="speciesObservations" inverseEntity="Subspecies" syncable="YES"/>
     </entity>
+    <entity name="SpeciesWatchlist" representedClassName="SpeciesWatchlist" syncable="YES">
+        <attribute name="ebirdCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="twitterCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SpeciesWatchlistDetail" inverseName="watchList" inverseEntity="SpeciesWatchlistDetail" syncable="YES"/>
+        <relationship name="species" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Species" inverseName="watchList" inverseEntity="Species" syncable="YES"/>
+    </entity>
+    <entity name="SpeciesWatchlistDetail" representedClassName="SpeciesWatchlistDetail" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="watchType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="watchList" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SpeciesWatchlist" inverseName="details" inverseEntity="SpeciesWatchlist" syncable="YES"/>
+    </entity>
     <entity name="Subspecies" representedClassName="Subspecies" syncable="YES">
         <attribute name="breedingSubregion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subspeciesLatinName" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
@@ -85,12 +100,14 @@
     <elements>
         <element name="ObservationBookmark" positionX="-828" positionY="-54" width="128" height="75"/>
         <element name="ObservationCollection" positionX="-1125" positionY="27" width="128" height="118"/>
-        <element name="ObservationGroup" positionX="-1125" positionY="189" width="128" height="88"/>
+        <element name="ObservationGroup" positionX="-1368" positionY="191" width="128" height="88"/>
         <element name="ObservationLocation" positionX="-1134" positionY="-162" width="128" height="148"/>
         <element name="Photograph" positionX="-974" positionY="-162" width="128" height="103"/>
-        <element name="Species" positionX="-819" positionY="180" width="128" height="225"/>
+        <element name="Species" positionX="-819" positionY="180" width="128" height="240"/>
         <element name="SpeciesBookmark" positionX="-828" positionY="-153" width="128" height="75"/>
         <element name="SpeciesObservation" positionX="-972" positionY="-25" width="128" height="418"/>
         <element name="Subspecies" positionX="-828" positionY="36" width="128" height="103"/>
+        <element name="SpeciesWatchlist" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="SpeciesWatchlistDetail" positionX="160" positionY="192" width="128" height="135"/>
     </elements>
 </model>

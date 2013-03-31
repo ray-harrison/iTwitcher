@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface iTwitcherCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewForCell;
+@property (weak, nonatomic) IBOutlet UILabel *majorLabelForCell;
 
 @end

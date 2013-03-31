@@ -160,7 +160,10 @@
 
 
 - (IBAction)done:(id)sender {
+    NSLog(@"Swipe gesture recognizaer");
   
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 @end

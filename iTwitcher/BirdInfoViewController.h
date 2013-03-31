@@ -16,6 +16,6 @@
 @property (nonatomic, retain) IBOutlet UIWebView *birdInfoView;
 @property (nonatomic, weak) NSString *speciesName;
 //@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
-//- (IBAction)done:(id)sender;
+- (IBAction)done:(id)sender;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "iTwitcherSpeciesObservationMasterViewController.h"
 #import "iTwitcherSpeciesViewController.h"
+#import "iTwitcherObservationCollectionViewController.h"
 #import "ObservationGroup+Query.h"
 #import "ObservationCollection+Query.h"
 #import "Species.h"
@@ -16,6 +17,7 @@
 @interface iTwitcherSpeciesObservationMasterViewController ()
 {
     NSMutableArray *observationGroups;
+    ObservationGroup *_currentObservationGroup;
     NSMutableArray *birdNames;
 }
 
@@ -37,10 +39,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+   // self.tableView.delegate = self;
+  //  self.tableView.dataSource = self;
+    observationGroups = [NSMutableArray arrayWithArray:[self.observationCollection.observationGroups allObjects]];
+   // self.navigationController.navigationBar.delegate = self;
+    
+    self.observationNameButton.titleLabel.text = self.observationCollection.name;
+  //  [self.tableView reloadData];
 }
-
--(void)viewDidAppear:(BOOL)animated
+/*
+-(void)viewWillAppear:(BOOL)animated
 {
    // [super viewWillAppear:animated];
     // See if there exists obersvation data for this location
@@ -50,9 +58,11 @@
         
         [birdNames addObject:@"Today"];
     }
+    
     NSLog(@"Bird Names Count %d",[birdNames count]);
     for (ObservationGroup *observationGroup in observationGroups) {
         NSLog(@"Observation Group Count %d",[observationGroups count]);
+        NSLog(@"Observation Group %@",observationGroup.date);
         for (SpeciesObservation *observation in observationGroup.speciesObservations) {
             Species *species = observation.species;
             [birdNames addObject:species.speciesEnglishName];
@@ -64,7 +74,15 @@
     }
     
     [self.tableView reloadData];
-    
+ 
+}
+*/
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"View Did Appear");
+    self.observationNameButton.titleLabel.text = self.observationCollection.name;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,19 +98,21 @@
 
     // Return the number of sections.
     
-    return [observationGroups count]>0?[observationGroups count]:1;
+    return 1;
+    //return [observationGroups count]>0?[observationGroups count]:1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
+    NSLog(@"observationGroups count %d",[observationGroups count]);
     // Return the number of rows in the section.
-    return [birdNames count];
+    return [observationGroups count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    NSLog(@"Cell for row at index path");
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc]
@@ -101,7 +121,9 @@
     
     
     // Configure the cell...
-    cell.textLabel.text = [birdNames objectAtIndex:indexPath.row]; 
+    ObservationGroup *observationGroup = [observationGroups objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",observationGroup.date];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Species:%d Birds:%d",[self speciesCount:observationGroup],[self birdCount:observationGroup]];
     return cell;
 }
 
@@ -155,6 +177,13 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+     _currentObservationGroup = [observationGroups objectAtIndex:indexPath.row];
+    if ([[_currentObservationGroup speciesObservations] count]>0) {
+        [self performSegueWithIdentifier:@"collectionGroup" sender:self];
+    } else {
+       [self performSegueWithIdentifier:@"AddBirds" sender:self];
+    }
+    
 }
 
 - (IBAction)doneAction:(id)sender {
@@ -171,6 +200,19 @@
 }
 
 
+-(void) didChooseSave:(iTwitcherSpeciesObservationDescriptionViewController *)controller observationLocation:(ObservationCollection *)observationCollection
+{
+    self.observationCollection = observationCollection;
+    [[self.birdDatabase managedObjectContext] save:nil];
+    self.observationNameButton.titleLabel.text = self.observationCollection.name;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) didCancel:(iTwitcherSpeciesObservationDescriptionViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -186,17 +228,73 @@
             speciesViewController.location = self.location;
             speciesViewController.observationLocation = self.observationLocation;
         
-            ObservationGroup *observationGroup = [[ObservationGroup alloc] initWithContext:[self.birdDatabase managedObjectContext] byDate:[NSDate date]];
-            [self.observationCollection addObservationGroupsObject:observationGroup];
-            [[self.birdDatabase managedObjectContext] save:nil];
-            speciesViewController.observationGroup = observationGroup;
+           // ObservationGroup *observationGroup = [[ObservationGroup alloc] initWithContext:[self.birdDatabase managedObjectContext] byDate:[NSDate date]];
+           // [self.observationCollection addObservationGroupsObject:observationGroup];
+           // [[self.birdDatabase managedObjectContext] save:nil];
+        
+            speciesViewController.observationGroup = _currentObservationGroup;
         
    
         
         
         
+    } else if([segue.identifier isEqualToString:@"collectionGroup"] ) {
+        iTwitcherObservationCollectionViewController *speciesGroupViewController =
+        segue.destinationViewController;
+        speciesGroupViewController.birdDatabase = self.birdDatabase;
+        speciesGroupViewController.observationGroup = _currentObservationGroup;
+        
+    } else if ([segue.identifier isEqualToString:@"speciesObservationDescription"]) {
+        iTwitcherSpeciesObservationDescriptionViewController *speciesObservationDescriptionViewController = segue.destinationViewController;
+        speciesObservationDescriptionViewController.observationDescriptionDelegate = self;
+        speciesObservationDescriptionViewController.observationCollection = self.observationCollection;
     }
 }
 
+-(int)speciesCount:(ObservationGroup *)observationGroup
+{
+    int count = 0;
+   // NSSet *observationGroups = [self.observationCollection observationGroups];
+   // for (ObservationGroup *observationGroup in observationGroups) {
+        count += [[observationGroup speciesObservations] count];
+        
+    //}
+    return count;
+    
+}
+-(int)birdCount:(ObservationGroup *)observationGroup
+{
+    int count = 0;
+    
+ //   NSSet *observationGroups = [self.observationCollection observationGroups];
+   // for (ObservationGroup *observationGroup in observationGroups) {
+        NSSet *speciesObservations = [observationGroup speciesObservations];
+        for (SpeciesObservation *speciesObservation in speciesObservations) {
+            count += [self speciesSum:speciesObservation];
+        }
+        
+    //}
+    return count;
+}
+-(int)speciesSum:(SpeciesObservation *)speciesObservation
+{
+    int sum =  [speciesObservation.femaleAdult intValue]+  [speciesObservation.femaleJuvenile intValue] + [speciesObservation.femaleImmature intValue]+[speciesObservation.femaleAgeUnknown intValue]
+    + [speciesObservation.maleAdult intValue] + [speciesObservation.maleJuvenile intValue] + [speciesObservation.maleImmature intValue] + [speciesObservation.maleAgeUnkown intValue]
+    + [speciesObservation.sexUnknownAdult intValue] + [speciesObservation.sexUnknownJuvenile intValue] + [speciesObservation.sexUnknownImmature intValue] + [speciesObservation.sexUnknownAgeUnknown intValue];
+    return sum;
+    
+}
 
+
+- (IBAction)addGroup:(id)sender {
+    ObservationGroup *observationGroup = [[ObservationGroup alloc] initWithContext:[self.birdDatabase managedObjectContext] byDate:[NSDate date]];
+    [self.observationCollection addObservationGroupsObject:observationGroup];
+    [[self.birdDatabase managedObjectContext] save:nil];
+    NSLog(@"observationGroups Count %d",[observationGroups count]);
+    
+    [observationGroups addObject:observationGroup];
+    NSLog(@"observationGroups Count After %d",[observationGroups count]);
+    [self.tableView reloadData];
+    
+}
 @end

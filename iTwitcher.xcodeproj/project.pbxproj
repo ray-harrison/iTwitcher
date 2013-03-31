@@ -7,10 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3304A62516D2ED7E00D78FAB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3304A62416D2ED7E00D78FAB /* MobileCoreServices.framework */; };
 		3306D1D116BEA0F7006F370F /* iTwitcherSubspeciesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3306D1D016BEA0F7006F370F /* iTwitcherSubspeciesViewController.m */; };
+		330981CF1704AFCD000FD2D1 /* Species.m in Sources */ = {isa = PBXBuildFile; fileRef = 330981CE1704AFCD000FD2D1 /* Species.m */; };
+		330981D21704B08A000FD2D1 /* SpeciesWatchlist+Query.m in Sources */ = {isa = PBXBuildFile; fileRef = 330981D11704B08A000FD2D1 /* SpeciesWatchlist+Query.m */; };
+		330981D51704ED2A000FD2D1 /* SpeciesWatchlistDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 330981D41704ED2A000FD2D1 /* SpeciesWatchlistDetail.m */; };
+		330981D81704ED2A000FD2D1 /* SpeciesWatchlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 330981D71704ED2A000FD2D1 /* SpeciesWatchlist.m */; };
+		3312E44A16ECBAFF0097EE11 /* SpeciesObservationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3312E44916ECBAFF0097EE11 /* SpeciesObservationDetailsViewController.m */; };
+		3314332C16E23370002712B9 /* BirdSightings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3314332B16E23370002712B9 /* BirdSightings.png */; };
+		3314332E16E23B54002712B9 /* BirdWatches.png in Resources */ = {isa = PBXBuildFile; fileRef = 3314332D16E23B54002712B9 /* BirdWatches.png */; };
+		331605F316EBAD200032A973 /* SpeciesObservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331605F216EBAD200032A973 /* SpeciesObservationViewController.m */; };
+		331A919B16F650C40038ACDD /* SpeciesListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A919A16F650C30038ACDD /* SpeciesListTableViewController.m */; };
+		331B3FA016CD658700E74C15 /* iTwitcherObservationCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331B3F9F16CD658700E74C15 /* iTwitcherObservationCollectionViewController.m */; };
+		331EB6DE16EF58BC00F48244 /* CoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EB6DD16EF58BC00F48244 /* CoverFlowLayout.m */; };
+		331EB6E216EF5E9B00F48244 /* iTwitcherPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EB6E116EF5E9B00F48244 /* iTwitcherPhotoCollectionViewCell.m */; };
+		331EB6E416EF5EE900F48244 /* iTwitcherPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331EB6E316EF5EE900F48244 /* iTwitcherPhotoCollectionViewCell.xib */; };
+		331EB6EF16EFEB1600F48244 /* Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EB6EC16EFEB1500F48244 /* Flickr.m */; };
+		331EB6F016EFEB1600F48244 /* Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EB6EC16EFEB1500F48244 /* Flickr.m */; };
+		331EB6F116EFEB1600F48244 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EB6EE16EFEB1500F48244 /* FlickrPhoto.m */; };
+		331EB6F216EFEB1600F48244 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EB6EE16EFEB1500F48244 /* FlickrPhoto.m */; };
+		3324BCFE16D7A1530002343A /* Instruction1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3324BCFD16D7A1530002343A /* Instruction1.png */; };
+		3324BD0416D7C83A0002343A /* InstructionsMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 3324BD0316D7C83A0002343A /* InstructionsMap.png */; };
+		33309B2F16E7ACDC0064F652 /* delete_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 33309B2E16E7ACDC0064F652 /* delete_icon.png */; };
+		33309B3116E7AF020064F652 /* add25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 33309B3016E7AF020064F652 /* add25x25.png */; };
+		33309B3316E7AF110064F652 /* delete25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 33309B3216E7AF110064F652 /* delete25x25.png */; };
 		33330B4016AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33330B3E16AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld */; };
+		33344CF616FC79FA00509607 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33344CF516FC79FA00509607 /* Twitter.framework */; };
+		33344CF916FC7FE400509607 /* CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 33344CF716FC7FE400509607 /* CustomBadge.m */; };
+		33344CFA16FC7FE400509607 /* CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 33344CF716FC7FE400509607 /* CustomBadge.m */; };
+		3334BB0816E4F15C00E9CDF5 /* iTwitcherObservationCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3334BB0716E4F15C00E9CDF5 /* iTwitcherObservationCollectionViewCell.m */; };
+		3334BB0B16E4F7CA00E9CDF5 /* MyObservationsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3334BB0A16E4F7CA00E9CDF5 /* MyObservationsCollectionViewController.m */; };
+		3339737816EE3523002220C0 /* SpeciesObservationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3339737716EE3523002220C0 /* SpeciesObservationNavigationController.m */; };
+		3339737C16EE4BEA002220C0 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3339737B16EE4BEA002220C0 /* FlickrFetcher.m */; };
+		333DDA2B1708C84A00C04BA1 /* HotspotTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333DDA2A1708C84A00C04BA1 /* HotspotTableViewController.m */; };
+		334080BC16F881FF0066C999 /* SpeciesListWeekTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334080BB16F881FF0066C999 /* SpeciesListWeekTableViewController.m */; };
+		334080BF16F889820066C999 /* SpeciesListsTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334080BE16F889820066C999 /* SpeciesListsTabBarController.m */; };
 		3347693B16BBFA4E00A0EF15 /* iTwitcherHotspotBookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347693A16BBFA4E00A0EF15 /* iTwitcherHotspotBookmarksViewController.m */; };
-		3347693E16BBFE8100A0EF15 /* iTwitcherObservationLocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347693D16BBFE8100A0EF15 /* iTwitcherObservationLocationDetailViewController.m */; };
 		3347694116BC096500A0EF15 /* iTwitcherMapDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347694016BC096500A0EF15 /* iTwitcherMapDetailsViewController.m */; };
 		334B368C16B45DB2004DCFE3 /* Species+Query.m in Sources */ = {isa = PBXBuildFile; fileRef = 334B368B16B45DB2004DCFE3 /* Species+Query.m */; };
 		334F5A4E16C167FD00A180AF /* iTwitcherSpeciesObservationMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334F5A4D16C167FD00A180AF /* iTwitcherSpeciesObservationMasterViewController.m */; };
@@ -31,8 +63,27 @@
 		3352AFF016AFE7D100FA1D34 /* Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352AFEE16AFE7D100FA1D34 /* Location@2x.png */; };
 		3352AFF516AFE91200FA1D34 /* ioc-names-3.1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3352AFF416AFE91100FA1D34 /* ioc-names-3.1.xml */; };
 		3352B00716B0071100FA1D34 /* Species+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 3352B00616B0071100FA1D34 /* Species+Create.m */; };
+		3354F3D216F35A0A005815F0 /* CBetterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3C716F35A09005815F0 /* CBetterCollectionViewCell.m */; };
+		3354F3D316F35A0A005815F0 /* CBetterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3C716F35A09005815F0 /* CBetterCollectionViewCell.m */; };
+		3354F3D416F35A0A005815F0 /* CBetterCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3C916F35A09005815F0 /* CBetterCollectionViewLayoutAttributes.m */; };
+		3354F3D516F35A0A005815F0 /* CBetterCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3C916F35A09005815F0 /* CBetterCollectionViewLayoutAttributes.m */; };
+		3354F3D616F35A0A005815F0 /* CCoverflowCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3CB16F35A09005815F0 /* CCoverflowCollectionViewLayout.m */; };
+		3354F3D716F35A0A005815F0 /* CCoverflowCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3CB16F35A09005815F0 /* CCoverflowCollectionViewLayout.m */; };
+		3354F3D816F35A0A005815F0 /* CInterpolator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3CD16F35A09005815F0 /* CInterpolator.mm */; };
+		3354F3D916F35A0A005815F0 /* CInterpolator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3CD16F35A09005815F0 /* CInterpolator.mm */; };
+		3354F3DA16F35A0A005815F0 /* Interpolator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3CE16F35A09005815F0 /* Interpolator.cpp */; };
+		3354F3DB16F35A0A005815F0 /* Interpolator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3CE16F35A09005815F0 /* Interpolator.cpp */; };
+		3354F3DC16F35A0A005815F0 /* CReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3D116F35A09005815F0 /* CReflectionView.m */; };
+		3354F3DD16F35A0A005815F0 /* CReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3D116F35A09005815F0 /* CReflectionView.m */; };
+		3354F3E116F38555005815F0 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3E016F38555005815F0 /* PhotoCollectionViewCell.m */; };
+		3354F3E216F38555005815F0 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354F3E016F38555005815F0 /* PhotoCollectionViewCell.m */; };
+		335A5D0416FCF3E900FBB582 /* SpeciesListDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335A5D0316FCF3E900FBB582 /* SpeciesListDetailTableViewController.m */; };
+		33649A7F16CE780D0040AE05 /* RedCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 33649A7E16CE780D0040AE05 /* RedCircle.png */; };
+		33649A8116CE85150040AE05 /* RedCircle16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 33649A8016CE85150040AE05 /* RedCircle16x16.png */; };
+		33649A8316CE99E60040AE05 /* trashcan.png in Resources */ = {isa = PBXBuildFile; fileRef = 33649A8216CE99E60040AE05 /* trashcan.png */; };
+		33649A8516CE9BEE0040AE05 /* trashcan24x24.png in Resources */ = {isa = PBXBuildFile; fileRef = 33649A8416CE9BEE0040AE05 /* trashcan24x24.png */; };
+		33649A8716CE9C870040AE05 /* trashcan32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 33649A8616CE9C870040AE05 /* trashcan32x32.png */; };
 		336A0A3B16C680EE00E8CD81 /* master_ioc-names-3.3_xml.xml in Resources */ = {isa = PBXBuildFile; fileRef = 336A0A3A16C680EE00E8CD81 /* master_ioc-names-3.3_xml.xml */; };
-		336A0A4116C68CEC00E8CD81 /* Species.m in Sources */ = {isa = PBXBuildFile; fileRef = 336A0A4016C68CEC00E8CD81 /* Species.m */; };
 		337D545416ADF31B004F53AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545316ADF31B004F53AF /* UIKit.framework */; };
 		337D545616ADF31B004F53AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545516ADF31B004F53AF /* Foundation.framework */; };
 		337D545816ADF31B004F53AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D545716ADF31B004F53AF /* CoreGraphics.framework */; };
@@ -72,14 +123,18 @@
 		339F6F5E16B9AF590008E5FA /* ObservationBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 339F6F5D16B9AF590008E5FA /* ObservationBookmark.m */; };
 		339F6F6116B9AF890008E5FA /* ObservationBookmark+Query.m in Sources */ = {isa = PBXBuildFile; fileRef = 339F6F6016B9AF890008E5FA /* ObservationBookmark+Query.m */; };
 		339F6F6416B9AFB00008E5FA /* SpeciesBookmark+Query.m in Sources */ = {isa = PBXBuildFile; fileRef = 339F6F6316B9AFB00008E5FA /* SpeciesBookmark+Query.m */; };
+		33A5046B16E66617004BDE5C /* ObservationCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A5046A16E66617004BDE5C /* ObservationCollectionView.m */; };
 		33AC561616C2911C0062BF9E /* ObservationLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AC561516C2911C0062BF9E /* ObservationLocation.m */; };
 		33AC561916C2911C0062BF9E /* Subspecies.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AC561816C2911C0062BF9E /* Subspecies.m */; };
 		33AC561F16C2911C0062BF9E /* ObservationCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AC561E16C2911C0062BF9E /* ObservationCollection.m */; };
 		33AC562216C2911C0062BF9E /* Photograph.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AC562116C2911C0062BF9E /* Photograph.m */; };
 		33AC562816C2D2FC0062BF9E /* ObservationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AC562716C2D2FB0062BF9E /* ObservationGroup.m */; };
 		33AC562B16C2D2FE0062BF9E /* SpeciesObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AC562A16C2D2FD0062BF9E /* SpeciesObservation.m */; };
+		33C09D7B16D65506006C01E8 /* iTwitcherObservationLocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C09D7A16D65506006C01E8 /* iTwitcherObservationLocationDetailsViewController.m */; };
+		33C09D7E16D6788E006C01E8 /* iTwitcherSpeciesObservationDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C09D7D16D6788E006C01E8 /* iTwitcherSpeciesObservationDescriptionViewController.m */; };
 		33D9A0E016B0A3EC005B1B70 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D9A0DF16B0A3EC005B1B70 /* SMXMLDocument.m */; };
 		33D9A0E116B0A5AB005B1B70 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D9A0DF16B0A3EC005B1B70 /* SMXMLDocument.m */; };
+		33E1963016E543AD005A6B49 /* MyObservationsCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E1962F16E543AD005A6B49 /* MyObservationsCollectionReusableView.m */; };
 		33FD2B7A16B88F0C00071039 /* BirdInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FD2B7916B88F0C00071039 /* BirdInfoViewController.m */; };
 		33FD2B7B16B8939300071039 /* BirdInfoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 33FD2B7816B88F0C00071039 /* BirdInfoViewController.h */; };
 		33FD2B7C16B8939300071039 /* BirdInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FD2B7916B88F0C00071039 /* BirdInfoViewController.m */; };
@@ -97,14 +152,63 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3304A62416D2ED7E00D78FAB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3306D1CF16BEA0F7006F370F /* iTwitcherSubspeciesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherSubspeciesViewController.h; sourceTree = "<group>"; };
 		3306D1D016BEA0F7006F370F /* iTwitcherSubspeciesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherSubspeciesViewController.m; sourceTree = "<group>"; };
+		330981CD1704AFCD000FD2D1 /* Species.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Species.h; sourceTree = "<group>"; };
+		330981CE1704AFCD000FD2D1 /* Species.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Species.m; sourceTree = "<group>"; };
+		330981D01704B08A000FD2D1 /* SpeciesWatchlist+Query.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpeciesWatchlist+Query.h"; sourceTree = "<group>"; };
+		330981D11704B08A000FD2D1 /* SpeciesWatchlist+Query.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SpeciesWatchlist+Query.m"; sourceTree = "<group>"; };
+		330981D31704ED2A000FD2D1 /* SpeciesWatchlistDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeciesWatchlistDetail.h; sourceTree = "<group>"; };
+		330981D41704ED2A000FD2D1 /* SpeciesWatchlistDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeciesWatchlistDetail.m; sourceTree = "<group>"; };
+		330981D61704ED2A000FD2D1 /* SpeciesWatchlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeciesWatchlist.h; sourceTree = "<group>"; };
+		330981D71704ED2A000FD2D1 /* SpeciesWatchlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeciesWatchlist.m; sourceTree = "<group>"; };
+		3312E44816ECBAFF0097EE11 /* SpeciesObservationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeciesObservationDetailsViewController.h; sourceTree = "<group>"; };
+		3312E44916ECBAFF0097EE11 /* SpeciesObservationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeciesObservationDetailsViewController.m; sourceTree = "<group>"; };
+		3314332B16E23370002712B9 /* BirdSightings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BirdSightings.png; sourceTree = "<group>"; };
+		3314332D16E23B54002712B9 /* BirdWatches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BirdWatches.png; sourceTree = "<group>"; };
+		331605F116EBAD200032A973 /* SpeciesObservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeciesObservationViewController.h; sourceTree = "<group>"; };
+		331605F216EBAD200032A973 /* SpeciesObservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeciesObservationViewController.m; sourceTree = "<group>"; };
+		331A919916F650C30038ACDD /* SpeciesListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeciesListTableViewController.h; sourceTree = "<group>"; };
+		331A919A16F650C30038ACDD /* SpeciesListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeciesListTableViewController.m; sourceTree = "<group>"; };
+		331B3F9E16CD658700E74C15 /* iTwitcherObservationCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherObservationCollectionViewController.h; sourceTree = "<group>"; };
+		331B3F9F16CD658700E74C15 /* iTwitcherObservationCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherObservationCollectionViewController.m; sourceTree = "<group>"; };
+		331EB6DC16EF58BC00F48244 /* CoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverFlowLayout.h; sourceTree = "<group>"; };
+		331EB6DD16EF58BC00F48244 /* CoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverFlowLayout.m; sourceTree = "<group>"; };
+		331EB6E016EF5E9B00F48244 /* iTwitcherPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		331EB6E116EF5E9B00F48244 /* iTwitcherPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		331EB6E316EF5EE900F48244 /* iTwitcherPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iTwitcherPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		331EB6EB16EFEB1500F48244 /* Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flickr.h; sourceTree = "<group>"; };
+		331EB6EC16EFEB1500F48244 /* Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flickr.m; sourceTree = "<group>"; };
+		331EB6ED16EFEB1500F48244 /* FlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
+		331EB6EE16EFEB1500F48244 /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
+		3324BCFD16D7A1530002343A /* Instruction1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Instruction1.png; sourceTree = "<group>"; };
+		3324BD0316D7C83A0002343A /* InstructionsMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InstructionsMap.png; sourceTree = "<group>"; };
 		332A650116B6C6C100072C6D /* iTwitcherModel_1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTwitcherModel_1.0.xcdatamodel; sourceTree = "<group>"; };
+		33309B2E16E7ACDC0064F652 /* delete_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete_icon.png; sourceTree = "<group>"; };
+		33309B3016E7AF020064F652 /* add25x25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add25x25.png; sourceTree = "<group>"; };
+		33309B3216E7AF110064F652 /* delete25x25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete25x25.png; sourceTree = "<group>"; };
 		33330B3F16AEC81B0045D3BC /* iTwitcherModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTwitcherModel.xcdatamodel; sourceTree = "<group>"; };
+		33344CF516FC79FA00509607 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		33344CF716FC7FE400509607 /* CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBadge.m; sourceTree = "<group>"; };
+		33344CF816FC7FE400509607 /* CustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBadge.h; sourceTree = "<group>"; };
+		3334BB0616E4F15C00E9CDF5 /* iTwitcherObservationCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherObservationCollectionViewCell.h; sourceTree = "<group>"; };
+		3334BB0716E4F15C00E9CDF5 /* iTwitcherObservationCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherObservationCollectionViewCell.m; sourceTree = "<group>"; };
+		3334BB0916E4F7CA00E9CDF5 /* MyObservationsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyObservationsCollectionViewController.h; sourceTree = "<group>"; };
+		3334BB0A16E4F7CA00E9CDF5 /* MyObservationsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObservationsCollectionViewController.m; sourceTree = "<group>"; };
+		3339737616EE3523002220C0 /* SpeciesObservationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeciesObservationNavigationController.h; sourceTree = "<group>"; };
+		3339737716EE3523002220C0 /* SpeciesObservationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeciesObservationNavigationController.m; sourceTree = "<group>"; };
+		3339737916EE4BEA002220C0 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		3339737A16EE4BEA002220C0 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		3339737B16EE4BEA002220C0 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		333DDA291708C84A00C04BA1 /* HotspotTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotspotTableViewController.h; sourceTree = "<group>"; };
+		333DDA2A1708C84A00C04BA1 /* HotspotTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotspotTableViewController.m; sourceTree = "<group>"; };
+		334080BA16F881FF0066C999 /* SpeciesListWeekTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeciesListWeekTableViewController.h; sourceTree = "<group>"; };
+		334080BB16F881FF0066C999 /* SpeciesListWeekTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeciesListWeekTableViewController.m; sourceTree = "<group>"; };
+		334080BD16F889820066C999 /* SpeciesListsTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeciesListsTabBarController.h; sourceTree = "<group>"; };
+		334080BE16F889820066C999 /* SpeciesListsTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeciesListsTabBarController.m; sourceTree = "<group>"; };
 		3347693916BBFA4E00A0EF15 /* iTwitcherHotspotBookmarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherHotspotBookmarksViewController.h; sourceTree = "<group>"; };
 		3347693A16BBFA4E00A0EF15 /* iTwitcherHotspotBookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherHotspotBookmarksViewController.m; sourceTree = "<group>"; };
-		3347693C16BBFE8100A0EF15 /* iTwitcherObservationLocationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherObservationLocationDetailViewController.h; sourceTree = "<group>"; };
-		3347693D16BBFE8100A0EF15 /* iTwitcherObservationLocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherObservationLocationDetailViewController.m; sourceTree = "<group>"; };
 		3347693F16BC096500A0EF15 /* iTwitcherMapDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherMapDetailsViewController.h; sourceTree = "<group>"; };
 		3347694016BC096500A0EF15 /* iTwitcherMapDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherMapDetailsViewController.m; sourceTree = "<group>"; };
 		334B368A16B45DB2004DCFE3 /* Species+Query.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Species+Query.h"; sourceTree = "<group>"; };
@@ -142,9 +246,28 @@
 		3352AFF416AFE91100FA1D34 /* ioc-names-3.1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ioc-names-3.1.xml"; sourceTree = "<group>"; };
 		3352B00516B0071100FA1D34 /* Species+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Species+Create.h"; sourceTree = "<group>"; };
 		3352B00616B0071100FA1D34 /* Species+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Species+Create.m"; sourceTree = "<group>"; };
+		3354F3C616F35A09005815F0 /* CBetterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBetterCollectionViewCell.h; sourceTree = "<group>"; };
+		3354F3C716F35A09005815F0 /* CBetterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBetterCollectionViewCell.m; sourceTree = "<group>"; };
+		3354F3C816F35A09005815F0 /* CBetterCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBetterCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		3354F3C916F35A09005815F0 /* CBetterCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBetterCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		3354F3CA16F35A09005815F0 /* CCoverflowCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCoverflowCollectionViewLayout.h; sourceTree = "<group>"; };
+		3354F3CB16F35A09005815F0 /* CCoverflowCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCoverflowCollectionViewLayout.m; sourceTree = "<group>"; };
+		3354F3CC16F35A09005815F0 /* CInterpolator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CInterpolator.h; sourceTree = "<group>"; };
+		3354F3CD16F35A09005815F0 /* CInterpolator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CInterpolator.mm; sourceTree = "<group>"; };
+		3354F3CE16F35A09005815F0 /* Interpolator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Interpolator.cpp; sourceTree = "<group>"; };
+		3354F3CF16F35A09005815F0 /* Interpolator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interpolator.h; sourceTree = "<group>"; };
+		3354F3D016F35A09005815F0 /* CReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CReflectionView.h; sourceTree = "<group>"; };
+		3354F3D116F35A09005815F0 /* CReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CReflectionView.m; sourceTree = "<group>"; };
+		3354F3DF16F38555005815F0 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		3354F3E016F38555005815F0 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		335A5D0216FCF3E900FBB582 /* SpeciesListDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeciesListDetailTableViewController.h; sourceTree = "<group>"; };
+		335A5D0316FCF3E900FBB582 /* SpeciesListDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeciesListDetailTableViewController.m; sourceTree = "<group>"; };
+		33649A7E16CE780D0040AE05 /* RedCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedCircle.png; sourceTree = "<group>"; };
+		33649A8016CE85150040AE05 /* RedCircle16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedCircle16x16.png; sourceTree = "<group>"; };
+		33649A8216CE99E60040AE05 /* trashcan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trashcan.png; sourceTree = "<group>"; };
+		33649A8416CE9BEE0040AE05 /* trashcan24x24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trashcan24x24.png; sourceTree = "<group>"; };
+		33649A8616CE9C870040AE05 /* trashcan32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trashcan32x32.png; sourceTree = "<group>"; };
 		336A0A3A16C680EE00E8CD81 /* master_ioc-names-3.3_xml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "master_ioc-names-3.3_xml.xml"; sourceTree = "<group>"; };
-		336A0A3F16C68CEC00E8CD81 /* Species.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Species.h; sourceTree = "<group>"; };
-		336A0A4016C68CEC00E8CD81 /* Species.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Species.m; sourceTree = "<group>"; };
 		337D545016ADF31B004F53AF /* iTwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		337D545316ADF31B004F53AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		337D545516ADF31B004F53AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -196,6 +319,8 @@
 		339F6F6016B9AF890008E5FA /* ObservationBookmark+Query.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObservationBookmark+Query.m"; sourceTree = "<group>"; };
 		339F6F6216B9AFB00008E5FA /* SpeciesBookmark+Query.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpeciesBookmark+Query.h"; sourceTree = "<group>"; };
 		339F6F6316B9AFB00008E5FA /* SpeciesBookmark+Query.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SpeciesBookmark+Query.m"; sourceTree = "<group>"; };
+		33A5046916E66617004BDE5C /* ObservationCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservationCollectionView.h; sourceTree = "<group>"; };
+		33A5046A16E66617004BDE5C /* ObservationCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservationCollectionView.m; sourceTree = "<group>"; };
 		33AC561416C2911C0062BF9E /* ObservationLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObservationLocation.h; path = ../ObservationLocation.h; sourceTree = "<group>"; };
 		33AC561516C2911C0062BF9E /* ObservationLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObservationLocation.m; path = ../ObservationLocation.m; sourceTree = "<group>"; };
 		33AC561716C2911C0062BF9E /* Subspecies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Subspecies.h; path = ../Subspecies.h; sourceTree = "<group>"; };
@@ -208,8 +333,14 @@
 		33AC562716C2D2FB0062BF9E /* ObservationGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservationGroup.m; sourceTree = "<group>"; };
 		33AC562916C2D2FC0062BF9E /* SpeciesObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeciesObservation.h; sourceTree = "<group>"; };
 		33AC562A16C2D2FD0062BF9E /* SpeciesObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeciesObservation.m; sourceTree = "<group>"; };
+		33C09D7916D65506006C01E8 /* iTwitcherObservationLocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherObservationLocationDetailsViewController.h; sourceTree = "<group>"; };
+		33C09D7A16D65506006C01E8 /* iTwitcherObservationLocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherObservationLocationDetailsViewController.m; sourceTree = "<group>"; };
+		33C09D7C16D6788E006C01E8 /* iTwitcherSpeciesObservationDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherSpeciesObservationDescriptionViewController.h; sourceTree = "<group>"; };
+		33C09D7D16D6788E006C01E8 /* iTwitcherSpeciesObservationDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTwitcherSpeciesObservationDescriptionViewController.m; sourceTree = "<group>"; };
 		33D9A0DE16B0A3EC005B1B70 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
 		33D9A0DF16B0A3EC005B1B70 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
+		33E1962E16E543AD005A6B49 /* MyObservationsCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyObservationsCollectionReusableView.h; sourceTree = "<group>"; };
+		33E1962F16E543AD005A6B49 /* MyObservationsCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObservationsCollectionReusableView.m; sourceTree = "<group>"; };
 		33FD2B7816B88F0C00071039 /* BirdInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirdInfoViewController.h; sourceTree = "<group>"; };
 		33FD2B7916B88F0C00071039 /* BirdInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirdInfoViewController.m; sourceTree = "<group>"; };
 		33FD2B7D16B8969400071039 /* iTwitcherSpeciesObservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTwitcherSpeciesObservationViewController.h; sourceTree = "<group>"; };
@@ -221,6 +352,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33344CF616FC79FA00509607 /* Twitter.framework in Frameworks */,
+				3304A62516D2ED7E00D78FAB /* MobileCoreServices.framework in Frameworks */,
 				337D54A016ADF67D004F53AF /* Social.framework in Frameworks */,
 				337D549E16ADF66B004F53AF /* QuartzCore.framework in Frameworks */,
 				337D549C16ADF642004F53AF /* iAd.framework in Frameworks */,
@@ -247,12 +380,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331EB6DF16EF58C600F48244 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				331EB6DC16EF58BC00F48244 /* CoverFlowLayout.h */,
+				331EB6DD16EF58BC00F48244 /* CoverFlowLayout.m */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
 		33330B3D16AEC7F60045D3BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				33330B3E16AEC81B0045D3BC /* iTwitcherModel.xcdatamodeld */,
-				336A0A3F16C68CEC00E8CD81 /* Species.h */,
-				336A0A4016C68CEC00E8CD81 /* Species.m */,
+				330981D61704ED2A000FD2D1 /* SpeciesWatchlist.h */,
+				330981D71704ED2A000FD2D1 /* SpeciesWatchlist.m */,
+				330981D31704ED2A000FD2D1 /* SpeciesWatchlistDetail.h */,
+				330981D41704ED2A000FD2D1 /* SpeciesWatchlistDetail.m */,
+				330981CD1704AFCD000FD2D1 /* Species.h */,
+				330981CE1704AFCD000FD2D1 /* Species.m */,
 				33AC562916C2D2FC0062BF9E /* SpeciesObservation.h */,
 				33AC562A16C2D2FD0062BF9E /* SpeciesObservation.m */,
 				33AC562616C2D2FB0062BF9E /* ObservationGroup.h */,
@@ -289,8 +435,33 @@
 				334F5A5616C194BF00A180AF /* ObservationGroup+Query.m */,
 				334F5A6116C1BCB500A180AF /* ObservationCollection+Query.h */,
 				334F5A6216C1BCB500A180AF /* ObservationCollection+Query.m */,
+				330981D01704B08A000FD2D1 /* SpeciesWatchlist+Query.h */,
+				330981D11704B08A000FD2D1 /* SpeciesWatchlist+Query.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		33344CFB16FC7FEB00509607 /* CustomBadge */ = {
+			isa = PBXGroup;
+			children = (
+				33344CF816FC7FE400509607 /* CustomBadge.h */,
+				33344CF716FC7FE400509607 /* CustomBadge.m */,
+			);
+			name = CustomBadge;
+			sourceTree = "<group>";
+		};
+		3339737D16EE4BF9002220C0 /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+				331EB6EB16EFEB1500F48244 /* Flickr.h */,
+				331EB6EC16EFEB1500F48244 /* Flickr.m */,
+				331EB6ED16EFEB1500F48244 /* FlickrPhoto.h */,
+				331EB6EE16EFEB1500F48244 /* FlickrPhoto.m */,
+				3339737916EE4BEA002220C0 /* FlickrAPIKey.h */,
+				3339737A16EE4BEA002220C0 /* FlickrFetcher.h */,
+				3339737B16EE4BEA002220C0 /* FlickrFetcher.m */,
+			);
+			name = Flickr;
 			sourceTree = "<group>";
 		};
 		335242E516B56772004CB402 /* Views */ = {
@@ -298,6 +469,17 @@
 			children = (
 				335242E616B567BD004CB402 /* iTwitcherCollectionViewCell.h */,
 				335242E716B567BD004CB402 /* iTwitcherCollectionViewCell.m */,
+				3334BB0616E4F15C00E9CDF5 /* iTwitcherObservationCollectionViewCell.h */,
+				3334BB0716E4F15C00E9CDF5 /* iTwitcherObservationCollectionViewCell.m */,
+				33E1962E16E543AD005A6B49 /* MyObservationsCollectionReusableView.h */,
+				33E1962F16E543AD005A6B49 /* MyObservationsCollectionReusableView.m */,
+				33A5046916E66617004BDE5C /* ObservationCollectionView.h */,
+				33A5046A16E66617004BDE5C /* ObservationCollectionView.m */,
+				331EB6E016EF5E9B00F48244 /* iTwitcherPhotoCollectionViewCell.h */,
+				331EB6E116EF5E9B00F48244 /* iTwitcherPhotoCollectionViewCell.m */,
+				331EB6E316EF5EE900F48244 /* iTwitcherPhotoCollectionViewCell.xib */,
+				3354F3DF16F38555005815F0 /* PhotoCollectionViewCell.h */,
+				3354F3E016F38555005815F0 /* PhotoCollectionViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -317,9 +499,30 @@
 			name = Annotations;
 			sourceTree = "<group>";
 		};
+		3354F3DE16F35A11005815F0 /* Coverflow */ = {
+			isa = PBXGroup;
+			children = (
+				3354F3C616F35A09005815F0 /* CBetterCollectionViewCell.h */,
+				3354F3C716F35A09005815F0 /* CBetterCollectionViewCell.m */,
+				3354F3C816F35A09005815F0 /* CBetterCollectionViewLayoutAttributes.h */,
+				3354F3C916F35A09005815F0 /* CBetterCollectionViewLayoutAttributes.m */,
+				3354F3CA16F35A09005815F0 /* CCoverflowCollectionViewLayout.h */,
+				3354F3CB16F35A09005815F0 /* CCoverflowCollectionViewLayout.m */,
+				3354F3CC16F35A09005815F0 /* CInterpolator.h */,
+				3354F3CD16F35A09005815F0 /* CInterpolator.mm */,
+				3354F3CE16F35A09005815F0 /* Interpolator.cpp */,
+				3354F3CF16F35A09005815F0 /* Interpolator.h */,
+				3354F3D016F35A09005815F0 /* CReflectionView.h */,
+				3354F3D116F35A09005815F0 /* CReflectionView.m */,
+			);
+			name = Coverflow;
+			sourceTree = "<group>";
+		};
 		337D544716ADF31B004F53AF = {
 			isa = PBXGroup;
 			children = (
+				33344CF516FC79FA00509607 /* Twitter.framework */,
+				3304A62416D2ED7E00D78FAB /* MobileCoreServices.framework */,
 				337D545916ADF31B004F53AF /* iTwitcher */,
 				337D548016ADF31C004F53AF /* iTwitcherTests */,
 				337D545216ADF31B004F53AF /* Frameworks */,
@@ -358,6 +561,10 @@
 		337D545916ADF31B004F53AF /* iTwitcher */ = {
 			isa = PBXGroup;
 			children = (
+				33344CFB16FC7FEB00509607 /* CustomBadge */,
+				3354F3DE16F35A11005815F0 /* Coverflow */,
+				331EB6DF16EF58C600F48244 /* Layout */,
+				3339737D16EE4BF9002220C0 /* Flickr */,
 				335242E916B590C9004CB402 /* Annotations */,
 				335242E516B56772004CB402 /* Views */,
 				33BB1F8416B17275007B60E9 /* View Controllers */,
@@ -379,12 +586,24 @@
 				337D54A116AE0B0D004F53AF /* Icon-72.png */,
 				337D54A216AE0B0D004F53AF /* Icon-72@2x.png */,
 				337D54A316AE0B0D004F53AF /* Icon-Small-50.png */,
+				3324BCFD16D7A1530002343A /* Instruction1.png */,
+				3324BD0316D7C83A0002343A /* InstructionsMap.png */,
 				337D54A416AE0B0D004F53AF /* Icon-Small-50@2x.png */,
+				33309B3016E7AF020064F652 /* add25x25.png */,
 				337D54A516AE0B0D004F53AF /* Icon-Small.png */,
+				3314332D16E23B54002712B9 /* BirdWatches.png */,
+				33309B2E16E7ACDC0064F652 /* delete_icon.png */,
+				33309B3216E7AF110064F652 /* delete25x25.png */,
+				3314332B16E23370002712B9 /* BirdSightings.png */,
+				33649A8216CE99E60040AE05 /* trashcan.png */,
 				337D54A616AE0B0D004F53AF /* Icon-Small@2x.png */,
 				337D54A716AE0B0D004F53AF /* Icon.png */,
+				33649A8416CE9BEE0040AE05 /* trashcan24x24.png */,
+				33649A8616CE9C870040AE05 /* trashcan32x32.png */,
 				336A0A3A16C680EE00E8CD81 /* master_ioc-names-3.3_xml.xml */,
 				337D54A816AE0B0D004F53AF /* Icon@2x.png */,
+				33649A8016CE85150040AE05 /* RedCircle16x16.png */,
+				33649A7E16CE780D0040AE05 /* RedCircle.png */,
 				337D54A916AE0B0D004F53AF /* iTunesArtwork.png */,
 				337D54AA16AE0B0D004F53AF /* iTunesArtwork@2x.png */,
 				337D545B16ADF31B004F53AF /* iTwitcher-Info.plist */,
@@ -437,14 +656,36 @@
 				339F6F5716B9A88B0008E5FA /* iTwitcherBookmarksViewController.m */,
 				3347693916BBFA4E00A0EF15 /* iTwitcherHotspotBookmarksViewController.h */,
 				3347693A16BBFA4E00A0EF15 /* iTwitcherHotspotBookmarksViewController.m */,
-				3347693C16BBFE8100A0EF15 /* iTwitcherObservationLocationDetailViewController.h */,
-				3347693D16BBFE8100A0EF15 /* iTwitcherObservationLocationDetailViewController.m */,
 				3347693F16BC096500A0EF15 /* iTwitcherMapDetailsViewController.h */,
 				3347694016BC096500A0EF15 /* iTwitcherMapDetailsViewController.m */,
 				3306D1CF16BEA0F7006F370F /* iTwitcherSubspeciesViewController.h */,
 				3306D1D016BEA0F7006F370F /* iTwitcherSubspeciesViewController.m */,
 				334F5A4C16C167FD00A180AF /* iTwitcherSpeciesObservationMasterViewController.h */,
 				334F5A4D16C167FD00A180AF /* iTwitcherSpeciesObservationMasterViewController.m */,
+				331B3F9E16CD658700E74C15 /* iTwitcherObservationCollectionViewController.h */,
+				331B3F9F16CD658700E74C15 /* iTwitcherObservationCollectionViewController.m */,
+				33C09D7916D65506006C01E8 /* iTwitcherObservationLocationDetailsViewController.h */,
+				33C09D7A16D65506006C01E8 /* iTwitcherObservationLocationDetailsViewController.m */,
+				33C09D7C16D6788E006C01E8 /* iTwitcherSpeciesObservationDescriptionViewController.h */,
+				33C09D7D16D6788E006C01E8 /* iTwitcherSpeciesObservationDescriptionViewController.m */,
+				3334BB0916E4F7CA00E9CDF5 /* MyObservationsCollectionViewController.h */,
+				3334BB0A16E4F7CA00E9CDF5 /* MyObservationsCollectionViewController.m */,
+				331605F116EBAD200032A973 /* SpeciesObservationViewController.h */,
+				331605F216EBAD200032A973 /* SpeciesObservationViewController.m */,
+				3312E44816ECBAFF0097EE11 /* SpeciesObservationDetailsViewController.h */,
+				3312E44916ECBAFF0097EE11 /* SpeciesObservationDetailsViewController.m */,
+				3339737616EE3523002220C0 /* SpeciesObservationNavigationController.h */,
+				3339737716EE3523002220C0 /* SpeciesObservationNavigationController.m */,
+				331A919916F650C30038ACDD /* SpeciesListTableViewController.h */,
+				331A919A16F650C30038ACDD /* SpeciesListTableViewController.m */,
+				334080BA16F881FF0066C999 /* SpeciesListWeekTableViewController.h */,
+				334080BB16F881FF0066C999 /* SpeciesListWeekTableViewController.m */,
+				334080BD16F889820066C999 /* SpeciesListsTabBarController.h */,
+				334080BE16F889820066C999 /* SpeciesListsTabBarController.m */,
+				335A5D0216FCF3E900FBB582 /* SpeciesListDetailTableViewController.h */,
+				335A5D0316FCF3E900FBB582 /* SpeciesListDetailTableViewController.m */,
+				333DDA291708C84A00C04BA1 /* HotspotTableViewController.h */,
+				333DDA2A1708C84A00C04BA1 /* HotspotTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -541,6 +782,19 @@
 				3352AFF016AFE7D100FA1D34 /* Location@2x.png in Resources */,
 				3352AFF516AFE91200FA1D34 /* ioc-names-3.1.xml in Resources */,
 				336A0A3B16C680EE00E8CD81 /* master_ioc-names-3.3_xml.xml in Resources */,
+				33649A7F16CE780D0040AE05 /* RedCircle.png in Resources */,
+				33649A8116CE85150040AE05 /* RedCircle16x16.png in Resources */,
+				33649A8316CE99E60040AE05 /* trashcan.png in Resources */,
+				33649A8516CE9BEE0040AE05 /* trashcan24x24.png in Resources */,
+				33649A8716CE9C870040AE05 /* trashcan32x32.png in Resources */,
+				3324BCFE16D7A1530002343A /* Instruction1.png in Resources */,
+				3324BD0416D7C83A0002343A /* InstructionsMap.png in Resources */,
+				3314332C16E23370002712B9 /* BirdSightings.png in Resources */,
+				3314332E16E23B54002712B9 /* BirdWatches.png in Resources */,
+				33309B2F16E7ACDC0064F652 /* delete_icon.png in Resources */,
+				33309B3116E7AF020064F652 /* add25x25.png in Resources */,
+				33309B3316E7AF110064F652 /* delete25x25.png in Resources */,
+				331EB6E416EF5EE900F48244 /* iTwitcherPhotoCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,7 +856,6 @@
 				339F6F6116B9AF890008E5FA /* ObservationBookmark+Query.m in Sources */,
 				339F6F6416B9AFB00008E5FA /* SpeciesBookmark+Query.m in Sources */,
 				3347693B16BBFA4E00A0EF15 /* iTwitcherHotspotBookmarksViewController.m in Sources */,
-				3347693E16BBFE8100A0EF15 /* iTwitcherObservationLocationDetailViewController.m in Sources */,
 				3347694116BC096500A0EF15 /* iTwitcherMapDetailsViewController.m in Sources */,
 				3306D1D116BEA0F7006F370F /* iTwitcherSubspeciesViewController.m in Sources */,
 				334F5A4E16C167FD00A180AF /* iTwitcherSpeciesObservationMasterViewController.m in Sources */,
@@ -614,7 +867,37 @@
 				33AC562216C2911C0062BF9E /* Photograph.m in Sources */,
 				33AC562816C2D2FC0062BF9E /* ObservationGroup.m in Sources */,
 				33AC562B16C2D2FE0062BF9E /* SpeciesObservation.m in Sources */,
-				336A0A4116C68CEC00E8CD81 /* Species.m in Sources */,
+				331B3FA016CD658700E74C15 /* iTwitcherObservationCollectionViewController.m in Sources */,
+				33C09D7B16D65506006C01E8 /* iTwitcherObservationLocationDetailsViewController.m in Sources */,
+				33C09D7E16D6788E006C01E8 /* iTwitcherSpeciesObservationDescriptionViewController.m in Sources */,
+				3334BB0816E4F15C00E9CDF5 /* iTwitcherObservationCollectionViewCell.m in Sources */,
+				3334BB0B16E4F7CA00E9CDF5 /* MyObservationsCollectionViewController.m in Sources */,
+				33E1963016E543AD005A6B49 /* MyObservationsCollectionReusableView.m in Sources */,
+				33A5046B16E66617004BDE5C /* ObservationCollectionView.m in Sources */,
+				331605F316EBAD200032A973 /* SpeciesObservationViewController.m in Sources */,
+				3312E44A16ECBAFF0097EE11 /* SpeciesObservationDetailsViewController.m in Sources */,
+				3339737816EE3523002220C0 /* SpeciesObservationNavigationController.m in Sources */,
+				331EB6DE16EF58BC00F48244 /* CoverFlowLayout.m in Sources */,
+				331EB6E216EF5E9B00F48244 /* iTwitcherPhotoCollectionViewCell.m in Sources */,
+				331EB6EF16EFEB1600F48244 /* Flickr.m in Sources */,
+				331EB6F116EFEB1600F48244 /* FlickrPhoto.m in Sources */,
+				3354F3D216F35A0A005815F0 /* CBetterCollectionViewCell.m in Sources */,
+				3354F3D416F35A0A005815F0 /* CBetterCollectionViewLayoutAttributes.m in Sources */,
+				3354F3D616F35A0A005815F0 /* CCoverflowCollectionViewLayout.m in Sources */,
+				3354F3D816F35A0A005815F0 /* CInterpolator.mm in Sources */,
+				3354F3DA16F35A0A005815F0 /* Interpolator.cpp in Sources */,
+				3354F3DC16F35A0A005815F0 /* CReflectionView.m in Sources */,
+				3354F3E116F38555005815F0 /* PhotoCollectionViewCell.m in Sources */,
+				331A919B16F650C40038ACDD /* SpeciesListTableViewController.m in Sources */,
+				334080BC16F881FF0066C999 /* SpeciesListWeekTableViewController.m in Sources */,
+				334080BF16F889820066C999 /* SpeciesListsTabBarController.m in Sources */,
+				33344CF916FC7FE400509607 /* CustomBadge.m in Sources */,
+				335A5D0416FCF3E900FBB582 /* SpeciesListDetailTableViewController.m in Sources */,
+				330981CF1704AFCD000FD2D1 /* Species.m in Sources */,
+				330981D21704B08A000FD2D1 /* SpeciesWatchlist+Query.m in Sources */,
+				330981D51704ED2A000FD2D1 /* SpeciesWatchlistDetail.m in Sources */,
+				330981D81704ED2A000FD2D1 /* SpeciesWatchlist.m in Sources */,
+				333DDA2B1708C84A00C04BA1 /* HotspotTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +908,17 @@
 				337D548816ADF31C004F53AF /* iTwitcherTests.m in Sources */,
 				33D9A0E016B0A3EC005B1B70 /* SMXMLDocument.m in Sources */,
 				33FD2B7A16B88F0C00071039 /* BirdInfoViewController.m in Sources */,
+				3339737C16EE4BEA002220C0 /* FlickrFetcher.m in Sources */,
+				331EB6F016EFEB1600F48244 /* Flickr.m in Sources */,
+				331EB6F216EFEB1600F48244 /* FlickrPhoto.m in Sources */,
+				3354F3D316F35A0A005815F0 /* CBetterCollectionViewCell.m in Sources */,
+				3354F3D516F35A0A005815F0 /* CBetterCollectionViewLayoutAttributes.m in Sources */,
+				3354F3D716F35A0A005815F0 /* CCoverflowCollectionViewLayout.m in Sources */,
+				3354F3D916F35A0A005815F0 /* CInterpolator.mm in Sources */,
+				3354F3DB16F35A0A005815F0 /* Interpolator.cpp in Sources */,
+				3354F3DD16F35A0A005815F0 /* CReflectionView.m in Sources */,
+				3354F3E216F38555005815F0 /* PhotoCollectionViewCell.m in Sources */,
+				33344CFA16FC7FE400509607 /* CustomBadge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

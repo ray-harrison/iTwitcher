@@ -18,6 +18,7 @@
 #import "iTwitcherSpeciesViewController.h"
 #import "ObservationGroup+Query.h"
 #import "ObservationCollection+Query.h"
+#import "MyObservationsCollectionViewController.h"
 #define METERS_PER_MILE 1609.344
 
 @interface iTwitcherCurrentMapViewController () {
@@ -25,6 +26,7 @@
     NSMutableArray *_annotations;
     
     iTwitcherObservationAnnotation *_droppedPin;
+    iTwitcherObservationAnnotation *_currentAnnotation;
     SpeciesObservation *_currentObservation;
     ObservationLocation *_birdLocation;
     ObservationCollection *_birdCollection;
@@ -33,6 +35,9 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CLLocation *currentLocation;
 @property (nonatomic) BOOL iAdBannerIsVisible;
+
+//@property (nonatomic, retain) IBOutlet UIView *contentView;
+@property (nonatomic, retain) id adBannerView;
 
 @property (nonatomic) CLLocationCoordinate2D currentObservationCoordinate;
 
@@ -65,7 +70,7 @@
     [self loadDocument];
     
     [self startLocationUpdates];
-    
+
     
     UILongPressGestureRecognizer *longPressRecogniser = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
     longPressRecogniser.minimumPressDuration = 1.0;
@@ -74,14 +79,33 @@
     self.mapView.delegate = self;
  
     self.iAdBannerIsVisible=YES;
+    self.iTwitcherAdView.delegate = self;
+
+     //   [self.view bringSubviewToFront:self.instructionView];
+    
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
     NSLog(@"Vide Did Appear");
     [self zoomToCurrentLocation];
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    BOOL firstTime = [prefs boolForKey:@"firstTimeStartup"];
+    if (firstTime) {
+     [self.view bringSubviewToFront:self.instructionView];
+        [prefs setBool:NO forKey:@"firstTimeStartup"];
+    }
     
 }
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    if (_currentAnnotation) {
+        [self.mapView selectAnnotation:_currentAnnotation animated:YES];
+    }
+}
+
 
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -221,12 +245,28 @@
             // Add a detail disclosure button to the callout.
             UIButton* rightButton = [UIButton buttonWithType:
                                      UIButtonTypeDetailDisclosure];
-            // [rightButton addTarget:self action:@selector(myShowDetailsMethod:)
-            // forControlEvents:UIControlEventTouchUpInside];
+           //  [rightButton addTarget:self action:@selector(segueToObservationCollection:)
+           // forControlEvents:UIControlEventTouchUpInside];
             pinView.rightCalloutAccessoryView = rightButton;
+            [pinView.rightCalloutAccessoryView setTag:0];
+          
+            UIButton* leftButton = [UIButton buttonWithType:
+                                    UIButtonTypeInfoDark];
+            [leftButton setImage:[UIImage imageNamed:@"trashcan32x32.png"] forState:UIControlStateNormal];
+            //  leftButton.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"trashcan.png"]]
+            //[leftButton addTarget:self action:@selector(deleteObservation:) forControlEvents:UIControlEventTouchUpInside];
+            pinView.leftCalloutAccessoryView = leftButton;
+            [pinView.leftCalloutAccessoryView setTag:1];
+            
+           // [pinView.leftCalloutAccessoryView setImage:[UIImage imageNamed:@"RedCircle16x16.png"]];
+            
         }
-        else
+        else {
             pinView.annotation = annotation;
+
+        }
+        
+        NSLog(@"Returning pinView");
         
         return pinView;
         
@@ -272,40 +312,60 @@
         
         
         
-    } else return nil;
+    } else {
+        NSLog(@"View for Annotation Returning NULL!!!!");
+     return nil;   
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)aView
 {
     // UIImage *image = [self.delegate mapViewController:self imageForAnnotation:aView.annotation];
     NSLog(@"Did select annotation view");
-    [(UIImageView *)aView.leftCalloutAccessoryView setImage:nil];
+   // [(UIImageView *)aView.leftCalloutAccessoryView setImage:nil];
 }
+
+
+
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     
     if ([view.annotation isKindOfClass:[iTwitcherObservationAnnotation class]]) {
-        NSLog(@"Annotation isKindOfClass iBirderObservationAnnotation");
-        iTwitcherObservationAnnotation *observationAnnotation = view.annotation;
-        self.currentObservationCoordinate = observationAnnotation.coordinate;
+        NSLog(@"Annotation isKindOfClass iBirderObservationAnnotation - Callout Accessory Tapped");
         
-        _currentObservation =
-        [SpeciesObservation getObservationInContext:[self.birdDatabase managedObjectContext]
-                                         byLatitude:[NSNumber numberWithFloat:observationAnnotation.coordinate.latitude]
-                                       andLongitude:[NSNumber numberWithFloat:observationAnnotation.coordinate.longitude]];
-        
-        _birdCollection = [ObservationCollection getObservationCollectionInContext:[self.birdDatabase managedObjectContext]
-                                                                        byLatitude:[NSNumber numberWithFloat:observationAnnotation.coordinate.latitude]
-                                                                      andLongitude:[NSNumber numberWithFloat:observationAnnotation.coordinate.longitude]];
-        
-        if (!_birdCollection) {
-            _birdCollection = [[ObservationCollection alloc] initWithContext:[self.birdDatabase managedObjectContext] byName:@"New Collection"];
+        _currentAnnotation = (iTwitcherObservationAnnotation *) view.annotation;
+        if ([control tag] == 0) { // Right button pressed
+           
+            iTwitcherObservationAnnotation *observationAnnotation = view.annotation;
+            self.currentObservationCoordinate = observationAnnotation.coordinate;
+            
+
+            
+            _birdCollection = [ObservationCollection getObservationCollectionInContext:[self.birdDatabase managedObjectContext]
+                                                                            byLatitude:[NSNumber numberWithFloat:observationAnnotation.coordinate.latitude]
+                                                                          andLongitude:[NSNumber numberWithFloat:observationAnnotation.coordinate.longitude]];
+            
+            if (!_birdCollection) {
+                NSLog(@"No Bird Collection in calloutAccessoryControlTapped!");
+                _birdCollection = [[ObservationCollection alloc] initWithContext:[self.birdDatabase managedObjectContext] byName:@"Observation"];
+                
+            }
+            
+            [self.mapView deselectAnnotation:_currentAnnotation animated:TRUE];
+           [self performSegueWithIdentifier:@"addCollectionAtLocation" sender:self];
         }
         
         
-       // [self performSegueWithIdentifier:@"AddBirds" sender:self];
-        [self performSegueWithIdentifier:@"addCollectionAtLocation" sender:self];
+        if([control tag] == 1) {
+            iTwitcherObservationAnnotation *observationAnnotation = view.annotation;
+            _birdCollection = [ObservationCollection getObservationCollectionInContext:[self.birdDatabase managedObjectContext]
+                                                                            byLatitude:[NSNumber numberWithFloat:observationAnnotation.coordinate.latitude]
+                                                                          andLongitude:[NSNumber numberWithFloat:observationAnnotation.coordinate.longitude]];
+            [self deleteObservation:_birdCollection];
+        }
+        
+      
     } else {
         
         
@@ -323,6 +383,7 @@
     }
     
 }
+
 
 
 
@@ -365,8 +426,29 @@
             
             
         }
-    } else {
+    } else  if ([view.annotation isKindOfClass:[iTwitcherObservationAnnotation class]]){
         // MapPlayAnnotation *annotation = (MapPlayAnnotation *)view.annotation;
+        
+        
+     
+        
+        if (newState == MKAnnotationViewDragStateStarting) {
+           // [self.mapView removeAnnotation:view.annotation];
+            [_annotations removeObject:view.annotation];
+        }
+        
+        if (newState == MKAnnotationViewDragStateEnding) {
+            
+            iTwitcherObservationAnnotation *observationAnnotation = view.annotation;
+            
+            observationAnnotation.observationCollection.latitude =  [NSNumber numberWithFloat:observationAnnotation.coordinate.latitude];
+            observationAnnotation.observationCollection.longitude = [NSNumber numberWithFloat:observationAnnotation.coordinate.longitude];
+            [[self.birdDatabase managedObjectContext] save:nil];
+            [_annotations addObject:observationAnnotation];
+        
+            
+        }
+        
     }
 }
 
@@ -376,7 +458,7 @@
 		// Create the view for the radius overlay.
 		MKCircleView *circleView = [[MKCircleView alloc] initWithOverlay:overlay];
 		circleView.strokeColor = [UIColor greenColor];
-		circleView.fillColor = [[UIColor greenColor] colorWithAlphaComponent:0.3];
+		circleView.fillColor = [[UIColor greenColor] colorWithAlphaComponent:0.1];
 		
 		return circleView;
 	}
@@ -389,7 +471,7 @@
 -(void) didChooseMapType:(iTwitcherMapDetailsViewController *)controller selectedSegmentedIndex:(NSInteger)index
 {
     
-    NSLog(@"Did Choose Map Type");
+   
     if (index == 0) {
         self.mapView.mapType = MKMapTypeStandard;
         
@@ -402,6 +484,18 @@
     [self zoomToCurrentLocation];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)handleSwipeGesture:(id)sender {
+    NSLog(@"Swipe Gesture");
+    [self.instructionView removeFromSuperview];
+}
+
+//- (void)handleSwipeGesture:(UIGestureRecognizer*)recogniser {
+//    NSLog(@"Swipe Gesture");
+//    [self.instructionView removeFromSuperview];
+    
+    
+//}
 
 
 // The Map View Controller maintains the annotations and displays any existing observations
@@ -417,18 +511,13 @@
         CLLocationCoordinate2D touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
 
         
-        SpeciesObservation *observation = [[SpeciesObservation alloc] initWithContext:_birdDatabase.managedObjectContext];
-        observation.latitude = @(touchMapCoordinate.latitude);
-        observation.longitude = @(touchMapCoordinate.longitude);
-        
-        NSDate *date = [NSDate date];
-        observation.date = date;
+ 
         
         if (![self observationInHotspot:touchMapCoordinate]) {
             // Create a basic ObservationLocation
-            NSLog(@"Setting Default Bird Location");
+           
            _birdLocation = [self defaultObservationLocation];
-            NSLog(@"Set Default Bird Location");
+            
             CLLocationCoordinate2D observationLocationCoordinate = CLLocationCoordinate2DMake([_birdLocation.centerLatitude floatValue], [_birdLocation.centerLongitude floatValue]);
             iTwitcherLocationAnnotation *locationAnnotation = [[iTwitcherLocationAnnotation alloc] initWithLocation:_birdLocation coordinate:observationLocationCoordinate radius:[_birdLocation.radius floatValue]];
             
@@ -443,10 +532,8 @@
             
         } else {
             _birdLocation = [self hotspotForObservationCoordinate:touchMapCoordinate];
-         //   [_birdLocation addSpeciesObservationsObject:observation];
-            CLLocationCoordinate2D observationLocationCoordinate = CLLocationCoordinate2DMake([_birdLocation.centerLatitude floatValue], [_birdLocation.centerLongitude floatValue]);
-            iTwitcherLocationAnnotation *locationAnnotation = [[iTwitcherLocationAnnotation alloc] initWithLocation:_birdLocation coordinate:observationLocationCoordinate radius:[_birdLocation.radius floatValue]];
-            [self.mapView addAnnotation:locationAnnotation];
+            
+       
         }
         
         
@@ -457,11 +544,66 @@
         // convert it to a string
         //  NSString *dateString = [dateFormat stringFromDate:date];
         
+        // When a new Pin Annotation is created, we need to provide a new
+        // observation collection. A collection can contain one or more observation
+        // groups, which are 1 or species observed at a specific location.
+        // For example at your backyard feeder, which occupies a specific location,
+        // you might have finches, sparrows, flickers across across mulitiple dates
+        // and it is these multiple dates which provide the "one or more" observation groups
+  
         
-       
+     //   NSDate *date = [NSDate date];
+     //   _currentObservation.date = date;
+        
+        
+        
+        _birdCollection = [ObservationCollection getObservationCollectionInContext:[self.birdDatabase managedObjectContext]
+                                                                        byLatitude:@(touchMapCoordinate.latitude)
+                                                                      andLongitude:@(touchMapCoordinate.longitude)];
+        
+        if (!_birdCollection) {
+            NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+            [dateFormat setDateFormat:@"YYYY/MM/dd HH:mm:ss"];
+            
+            NSDate *date = [NSDate date];
+            
+            NSTimeZone *timeZone = [NSTimeZone localTimeZone];
+            [dateFormat setTimeZone:timeZone];
+            NSString *formattedDate = [dateFormat stringFromDate:date];
+            
+          
+          
+           // NSDate *date2 = [calendar date];
+            _birdCollection = [[ObservationCollection alloc] initWithContext:[self.birdDatabase managedObjectContext] byName:[NSString stringWithFormat:@"Observation %@",formattedDate]];
+            _birdCollection.latitude = @(touchMapCoordinate.latitude);
+            _birdCollection.longitude = @(touchMapCoordinate.longitude);
+        }
+        
+        // An initial observation group
+        
+        ObservationGroup *observationGroup = [[ObservationGroup alloc] initWithContext:[self.birdDatabase managedObjectContext] byDate:[NSDate date]];
+        [_birdCollection addObservationGroupsObject:observationGroup];
+        ObservationLocation *observationLocation = [self currentHotspotForObservation];
+        NSLog(@"Observation Name %@",observationLocation.name);
+        [_birdLocation addObservationCollectionsObject:_birdCollection];
+        
+        [[self.birdDatabase managedObjectContext] save:nil];
+     // [self.birdDatabase saveToURL:<#(NSURL *)#> forSaveOperation:<#(UIDocumentSaveOperation)#> completionHandler:<#^(BOOL success)completionHandler#>]
+        
+        
+        [self.birdDatabase saveToURL:self.birdDatabase.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
+            
+            if (success) {
+                
+                NSLog(@"Document Saved");
+            } else {
+                NSLog(@"Could not save document");
+            }
+            
+        }];
         
        // [_birdLocation addSpeciesObservationsObject:observation];
-        _droppedPin = [[iTwitcherObservationAnnotation alloc] annotationForObservation:observation];
+        _droppedPin = [iTwitcherObservationAnnotation annotationForObservationCollection:_birdCollection];
         _droppedPin.coordinate = touchMapCoordinate;
        
         // get the current date
@@ -472,7 +614,7 @@
         [_annotations addObject:_droppedPin];
         [self.mapView addAnnotation:_droppedPin];
         [self.mapView setCenterCoordinate:self.mapView.region.center animated:NO];
-        [self loadData];
+       // [self loadData];
  
     }
 }
@@ -495,12 +637,13 @@
         
         UINavigationController *navigationController = segue.destinationViewController;
        // We know that the relevant child is at object id=0;
-        iTwitcherSpeciesObservationMasterViewController *observationMasterController = (iTwitcherSpeciesObservationMasterViewController *)[navigationController.childViewControllers objectAtIndex:0];
+        NSLog(@"Looking for objectAtIndex 0");
+        MyObservationsCollectionViewController *observationMasterController = (MyObservationsCollectionViewController *)[navigationController.childViewControllers objectAtIndex:0];
         observationMasterController.observationMasterDelegate = self;
         observationMasterController.birdDatabase = self.birdDatabase;
         observationMasterController.location = self.currentObservationCoordinate;
         observationMasterController.observationCollection = _birdCollection;
-        
+        NSLog(@"%f %f",[_birdCollection.latitude floatValue],[_birdCollection.longitude floatValue]);
        
         
     }
@@ -544,28 +687,85 @@
 }
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)bannerView {
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+ //   int bannerHeight =[self getBannerHeight:orientation];
     if (!self.iAdBannerIsVisible)
     {
-        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-        // Assumes the banner view is just off the bottom of the screen.
-        bannerView.frame = CGRectOffset(bannerView.frame, 0, -bannerView.frame.size.height);
-        [UIView commitAnimations];
+       
         self.iAdBannerIsVisible = YES;
-    }
+        [self fixupAdView:orientation];
+    } 
     
     
 }
 
+- (int)getBannerHeight:(UIInterfaceOrientation)orientation {
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        return 32;
+    } else {
+        return 50;
+    }
+}
+
+- (int)getBannerHeight {
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    return [self getBannerHeight:orientation];
+}
+
 - (void)bannerView:(ADBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error{
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    int bannerHeight =[self getBannerHeight:orientation];
     if (self.iAdBannerIsVisible)
     {
         [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
         // Assumes the banner view is placed at the bottom of the screen.
-        bannerView.frame = CGRectOffset(bannerView.frame, 0, bannerView.frame.size.height);
+        bannerView.frame = CGRectOffset(bannerView.frame, 0, bannerHeight);
         [UIView commitAnimations];
         self.iAdBannerIsVisible = NO;
+    } 
+}
+
+- (void)fixupAdView:(UIInterfaceOrientation)toInterfaceOrientation {
+    if (_adBannerView != nil) {
+        if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+            [_adBannerView setCurrentContentSizeIdentifier:
+             ADBannerContentSizeIdentifierLandscape];
+        } else {
+            [_adBannerView setCurrentContentSizeIdentifier:
+             ADBannerContentSizeIdentifierPortrait];
+        }
+        [UIView beginAnimations:@"fixupViews" context:nil];
+        if (self.iAdBannerIsVisible) {
+            CGRect adBannerViewFrame = [_adBannerView frame];
+            adBannerViewFrame.origin.x = 0;
+            adBannerViewFrame.origin.y = 0;
+            [_adBannerView setFrame:adBannerViewFrame];
+            CGRect contentViewFrame = _mapView.frame;
+            contentViewFrame.origin.y =
+            [self getBannerHeight:toInterfaceOrientation];
+            contentViewFrame.size.height = self.view.frame.size.height -
+            [self getBannerHeight:toInterfaceOrientation];
+            _mapView.frame = contentViewFrame;
+        } else {
+            CGRect adBannerViewFrame = [_adBannerView frame];
+            adBannerViewFrame.origin.x = 0;
+            adBannerViewFrame.origin.y =
+            -[self getBannerHeight:toInterfaceOrientation];
+            [_adBannerView setFrame:adBannerViewFrame];
+            CGRect contentViewFrame = _mapView.frame;
+            contentViewFrame.origin.y = 0;
+            contentViewFrame.size.height = self.view.frame.size.height;
+            _mapView.frame = contentViewFrame;
+        }
+        [UIView commitAnimations];
     }
 }
+
+-(void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+   [self fixupAdView:toInterfaceOrientation]; 
+}
+
 
 
 - (void)useDocument
@@ -604,12 +804,18 @@
 {
 
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    CLLocation *location = [self.locationManager location];
+   // CLLocation *location = [self.locationManager location];
+    
+    
+    
+    CLLocationCoordinate2D centre = [self.mapView centerCoordinate];
+    //CLLocation *location = CLLocationCoordinate2DMake(centre.latitude, centre.longitude);
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:centre.latitude longitude:centre.longitude];
     
     __block ObservationLocation *observationLocation = [[ObservationLocation alloc] initWithContext:[self.birdDatabase managedObjectContext] name:@"My New Location"];
     observationLocation.radius = [NSNumber numberWithInt:500];
-    observationLocation.centerLatitude = [NSNumber numberWithFloat:location.coordinate.latitude];
-    observationLocation.centerLongitude = [NSNumber numberWithFloat:location.coordinate.longitude];
+    observationLocation.centerLatitude = [NSNumber numberWithFloat:centre.latitude];
+    observationLocation.centerLongitude = [NSNumber numberWithFloat:centre.longitude];
     
     [[self.birdDatabase managedObjectContext] save:nil];
     __weak iTwitcherCurrentMapViewController *weakSelf = self;
@@ -688,6 +894,26 @@
 -(void)updateSpeciesObservation
 {
    [[self.birdDatabase managedObjectContext] save:nil]; 
+}
+
+-(void) deleteObservationCollection:(ObservationCollection *)observationCollection
+{
+    if (observationCollection) {
+      for (ObservationGroup *observationGroup in observationCollection.observationGroups) {
+        for (SpeciesObservation *speciesObservation in observationGroup.speciesObservations) {
+            speciesObservation.species = nil;
+            [[self.birdDatabase managedObjectContext] deleteObject:speciesObservation];
+        }
+          [[self.birdDatabase managedObjectContext] deleteObject:observationGroup];
+       }
+       [[self.birdDatabase managedObjectContext] deleteObject:observationCollection];
+       [self.mapView removeAnnotation:_currentAnnotation];
+       NSError *error = nil;
+       [[self.birdDatabase managedObjectContext] save:&error];
+        if (error) {
+            NSLog(@"[%@ %@] %@ (%@)", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [error localizedDescription], [error localizedFailureReason]);
+        }
+    }
 }
 
 -(BOOL) observationInHotspot:(CLLocationCoordinate2D) coordinate
@@ -769,11 +995,12 @@
     
    // [self deleteAllObservationLocations];
    // [self deleteAllSpeciesObservations];
+    
     NSArray *locationData = [ObservationLocation getLocationsInContext:[self birdDatabase].managedObjectContext ];
     
     NSUInteger locationCount = locationData.count;
     
-    
+   
     
    
     
@@ -794,8 +1021,7 @@
         [_locations addObject:locationAnnotation];
         
         for (ObservationCollection *observationCollection in loc.observationCollections) {
-          
-            
+           
             iTwitcherObservationAnnotation *observationAnnotation = [iTwitcherObservationAnnotation annotationForObservationCollection:observationCollection];
             
             [self.mapView addAnnotation:observationAnnotation];
@@ -824,4 +1050,13 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(void) deleteObservation:(ObservationCollection *)observationCollection
+{
+    NSLog(@"Delete Observation Pressed");
+    [self deleteObservationCollection:observationCollection];
+}
+
+
+
 @end

@@ -8,6 +8,7 @@
 
 #import "iTwitcherObservationAnnotation.h"
 #import "ObservationLocation.h"
+#import "ObservationGroup.h"
 
 @implementation iTwitcherObservationAnnotation
 -(iTwitcherObservationAnnotation *) annotationForObservation:(SpeciesObservation *) obs
@@ -45,10 +46,14 @@
 
 -(NSString *) subtitle
 {
-    return [NSString stringWithFormat:@"%@",
-            self.observation.date];
+    
+    
+    return [NSString stringWithFormat:@"Species: %d  Birds: %d", self.speciesCount,self.birdCount];
+            
     
 }
+
+
 
 - (id)initWithLocation:(CLLocationCoordinate2D)coord observation:(SpeciesObservation *)obs{
     self = [super init];
@@ -66,6 +71,40 @@
         self.observationCollection = obs;
     }
     return self;
+}
+
+-(int)speciesCount
+{
+    int count = 0;
+    NSSet *observationGroups = [self.observationCollection observationGroups];
+    for (ObservationGroup *observationGroup in observationGroups) {
+        count += [[observationGroup speciesObservations] count];
+        
+    }
+    return count;
+    
+}
+-(int)birdCount
+{
+    int count = 0;
+   
+    NSSet *observationGroups = [self.observationCollection observationGroups];
+    for (ObservationGroup *observationGroup in observationGroups) {
+        NSSet *speciesObservations = [observationGroup speciesObservations];
+        for (SpeciesObservation *speciesObservation in speciesObservations) {
+            count += [self speciesSum:speciesObservation];
+        }
+        
+    }
+    return count;
+}
+-(int)speciesSum:(SpeciesObservation *)speciesObservation
+{
+    int sum =  [speciesObservation.femaleAdult intValue]+  [speciesObservation.femaleJuvenile intValue] + [speciesObservation.femaleImmature intValue]+[speciesObservation.femaleAgeUnknown intValue]
+    + [speciesObservation.maleAdult intValue] + [speciesObservation.maleJuvenile intValue] + [speciesObservation.maleImmature intValue] + [speciesObservation.maleAgeUnkown intValue]
+    + [speciesObservation.sexUnknownAdult intValue] + [speciesObservation.sexUnknownJuvenile intValue] + [speciesObservation.sexUnknownImmature intValue] + [speciesObservation.sexUnknownAgeUnknown intValue];
+    return sum;
+    
 }
 
 @end

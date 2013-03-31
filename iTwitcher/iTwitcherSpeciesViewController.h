@@ -15,9 +15,16 @@
 #import "ObservationGroup+Query.h"
 #import "iTwitcherSpeciesObservationViewController.h"
 
+@class iTwitcherSpeciesViewController;
+@protocol SpeciesDelegate <NSObject>
+-(void) didSelectSpecies: (iTwitcherSpeciesViewController *)controller species: (Species *)species;
+-(void) didCancelSpeciesSelection:(iTwitcherSpeciesViewController *)controller;
+
+@end
+
 @interface iTwitcherSpeciesViewController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate, iTwitcherSpeciesObservationDelegate>
 
-
+@property (nonatomic, weak) id <SpeciesDelegate> delegate;
 
 @property (nonatomic, strong) UIManagedDocument *birdDatabase;
 

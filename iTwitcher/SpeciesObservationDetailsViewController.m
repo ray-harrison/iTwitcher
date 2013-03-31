@@ -1,18 +1,18 @@
 //
-//  iTwitcherObservationLocationDetailViewController.m
+//  SpeciesObservationDetailsViewController.m
 //  iTwitcher
 //
-//  Created by Raymond Harrison on 2/1/13.
+//  Created by Raymond Harrison on 3/10/13.
 //  Copyright (c) 2013 Raymond Harrison. All rights reserved.
 //
 
-#import "iTwitcherObservationLocationDetailViewController.h"
+#import "SpeciesObservationDetailsViewController.h"
 
-@interface iTwitcherObservationLocationDetailViewController ()
+@interface SpeciesObservationDetailsViewController ()
 
 @end
 
-@implementation iTwitcherObservationLocationDetailViewController
+@implementation SpeciesObservationDetailsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

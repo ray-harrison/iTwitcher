@@ -7,6 +7,7 @@
 //
 
 #import "SpeciesObservation+Query.h"
+#import "Species.h"
 
 @implementation SpeciesObservation (Query)
 +(NSArray *) getObservationsInContext:(NSManagedObjectContext *)context
@@ -31,5 +32,18 @@
     NSError *error = nil;
     NSArray *observationArray = [context executeFetchRequest:request error:&error];
     return [observationArray objectAtIndex:0];
+}
+
++(NSArray *)speciesObservations:(NSManagedObjectContext *)context bySpeciesName:(NSString *)speciesName
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SpeciesObservation"];
+    
+    NSPredicate *filterPredicate =
+      [NSPredicate predicateWithFormat:@"species.speciesEnglishName =%@",speciesName];
+    request.predicate = filterPredicate;
+    NSError *error = nil;
+    NSArray *speciesObservationsArray = [context executeFetchRequest:request error:&error];
+       return speciesObservationsArray;
+    
 }
 @end

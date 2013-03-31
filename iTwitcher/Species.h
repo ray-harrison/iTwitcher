@@ -2,14 +2,14 @@
 //  Species.h
 //  iTwitcher
 //
-//  Created by Raymond Harrison on 2/9/13.
+//  Created by Raymond Harrison on 3/28/13.
 //  Copyright (c) 2013 Raymond Harrison. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class SpeciesObservation, Subspecies;
+@class SpeciesObservation, SpeciesWatchlist, Subspecies;
 
 @interface Species : NSManagedObject
 
@@ -21,10 +21,11 @@
 @property (nonatomic, retain) NSString * orderLatinName;
 @property (nonatomic, retain) NSString * speciesEnglishName;
 @property (nonatomic, retain) NSString * speciesLatinName;
-@property (nonatomic, retain) NSString * subspeciesLatinName;
 @property (nonatomic, retain) NSString * subspeciesBreedingSubregion;
+@property (nonatomic, retain) NSString * subspeciesLatinName;
 @property (nonatomic, retain) NSSet *speciesObservations;
 @property (nonatomic, retain) NSSet *subspecies;
+@property (nonatomic, retain) SpeciesWatchlist *watchList;
 @end
 
 @interface Species (CoreDataGeneratedAccessors)

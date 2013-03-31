@@ -2,12 +2,13 @@
 //  Species.m
 //  iTwitcher
 //
-//  Created by Raymond Harrison on 2/9/13.
+//  Created by Raymond Harrison on 3/28/13.
 //  Copyright (c) 2013 Raymond Harrison. All rights reserved.
 //
 
 #import "Species.h"
 #import "SpeciesObservation.h"
+#import "SpeciesWatchlist.h"
 #import "Subspecies.h"
 
 
@@ -21,9 +22,10 @@
 @dynamic orderLatinName;
 @dynamic speciesEnglishName;
 @dynamic speciesLatinName;
-@dynamic subspeciesLatinName;
 @dynamic subspeciesBreedingSubregion;
+@dynamic subspeciesLatinName;
 @dynamic speciesObservations;
 @dynamic subspecies;
+@dynamic watchList;
 
 @end

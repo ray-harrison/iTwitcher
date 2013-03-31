@@ -14,6 +14,7 @@
 {
     iTwitcherLocationAnnotation *locationAnnotation = [[iTwitcherLocationAnnotation alloc] init];
     locationAnnotation.location = location;
+    
     return locationAnnotation;
 }
 
@@ -44,6 +45,7 @@
                                                           radius:_radius
                                                       identifier:[self title]];
         _location = location;
+        
         
         
     }

@@ -38,11 +38,11 @@
     NSSortDescriptor *speciesCommonNameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"speciesEnglishName" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     request.sortDescriptors = @[familyCommonNameSortDescriptor,speciesCommonNameSortDescriptor];
     
-    if ([searchText length] < 3) {
-      [request setFetchLimit:25];  
+    if ([searchText length] < 2) {
+      [request setFetchLimit:10];
     }//[request setFetchLimit:25];
     
-   // [request setFetchBatchSize:25];
+    //[request setFetchBatchSize:25];
     //[request setPropertiesToFetch:@[@"genus.family.englishName",@"englishName"]];
     
     request.includesSubentities = YES;
@@ -91,7 +91,7 @@
     [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                         managedObjectContext:context
                                           sectionNameKeyPath:@"familyEnglishName"
-                                                   cacheName:@"speciesCache"];
+                                                   cacheName:nil];
     
 
     
@@ -109,5 +109,64 @@
     NSArray *speciesArray = [context executeFetchRequest:request error:&error];
     return [speciesArray objectAtIndex:0];
 }
+
++(NSArray *) speciesWithObservationsWeek:(NSManagedObjectContext *) context
+{
+    NSTimeInterval secondsPerDay = 24 * 60 * 60;
+    NSDate *today = [NSDate date];
+    NSDate *week = [today dateByAddingTimeInterval:-14*secondsPerDay];
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Species"];
+   // NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"speciesObservations.@count >0 AND ANY speciesObservations.date >=%@",week];
+    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"SUBQUERY(speciesObservations, $s, $s.date > %@).@count>0",week];
+    request.predicate = filterPredicate;
+    NSLog(@"Request %@",request);
+    NSError *error = nil;
+    NSArray *queryResults = [context executeFetchRequest:request error:&error];
+    
+    
+    
+    return queryResults;
+    
+    
+    
+}
+
++(NSArray *) speciesWithObservations:(NSManagedObjectContext *) context
+{
+    NSTimeInterval secondsPerDay = 24 * 60 * 60;
+    NSDate *today = [self dateWithLocalTimeZone];
+    NSDate *day = [today dateByAddingTimeInterval:-secondsPerDay];
+    
+    
+    NSLog(@"Date %@",today);
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Species"];
+   // NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"speciesObservations.@count >0 AND ANY speciesObservations.date >=%@",day];
+        NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"SUBQUERY(speciesObservations, $s, $s.date > %@).@count>0",day];
+    request.predicate = filterPredicate;
+    NSLog(@"Request day %@",request);
+    NSError *error = nil;
+    NSArray *queryResults = [context executeFetchRequest:request error:&error];
+   
+    NSLog(@"Results %@",queryResults);
+    
+    return queryResults;
+    
+    
+    
+}
+
++(NSDate *) dateWithLocalTimeZone
+{
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSDate *date = [NSDate date];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    [gregorian setTimeZone:[NSTimeZone localTimeZone]];
+    NSDateComponents *comps = [gregorian components:unitFlags fromDate:date];
+    NSDate *dateReturn = [gregorian dateFromComponents:comps];
+    return dateReturn;
+}
+
+
 
 @end

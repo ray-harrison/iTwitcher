@@ -10,7 +10,9 @@
 
 @interface ObservationLocation (Query)
 +(NSArray *) searchLocationByName:(NSString *)name inContext:(NSManagedObjectContext *)context;
++(NSArray *) searchLocationByName:(NSString *)name inContext:(NSManagedObjectContext *)context bySpeciesName:(NSString *)speciesName;
 +(NSArray *) getLocationsInContext:(NSManagedObjectContext *)context;
 +(NSArray *) getSpeciesObservationsInContext:(NSManagedObjectContext *)context;
 +(NSSet *) getSpeciesObservationsForObservationLocation:(ObservationLocation *)observationLocation;
++(NSArray *) queryObservationLocations:(NSManagedObjectContext *)context bySpeciesName:(NSString *)speciesEnglishName;
 @end

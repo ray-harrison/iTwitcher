@@ -12,6 +12,7 @@
 #import "SpeciesObservation+Query.h"
 #import "ObservationLocation.h"
 #import "ObservationCollection+Query.h"
+#import "iTwitcherSpeciesObservationDescriptionViewController.h"
 @class iTwitcherSpeciesObservationMasterViewController;
 @protocol iTwitcherSpeciesObservationMasterDelegate <NSObject>
 -(void) didCreateObservationCollection: (iTwitcherSpeciesObservationMasterViewController *)controller observationCollection: (ObservationCollection *)observationCollection;
@@ -19,7 +20,7 @@
 
 @end
 
-@interface iTwitcherSpeciesObservationMasterViewController : UITableViewController
+@interface iTwitcherSpeciesObservationMasterViewController : UITableViewController <iTwitcherObservationDescriptionDelegate, UINavigationBarDelegate>
 
 @property (nonatomic, weak) id <iTwitcherSpeciesObservationMasterDelegate> observationMasterDelegate;
 
@@ -27,8 +28,11 @@
 @property (nonatomic) CLLocationCoordinate2D location;
 @property (nonatomic, strong) ObservationLocation *observationLocation;
 @property (nonatomic, strong) ObservationCollection *observationCollection;
+@property (weak, nonatomic) IBOutlet UIButton *observationNameButton;
 
 - (IBAction)doneAction:(id)sender;
 - (IBAction)cancelAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addGroupButton;
+- (IBAction)addGroup:(id)sender;
 
 @end
